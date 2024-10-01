@@ -17,6 +17,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -29,7 +34,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /*place-items: center;*/ /* not sure if i want to use this still */
   min-width: 320px;
   min-height: 100vh;
 }
