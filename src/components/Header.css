@@ -1,0 +1,33 @@
+.header-container {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap; /* Wraps the divs for smaller screens */
+    justify-content: space-between; /* Creates space between the left and right divs */
+    align-items: stretch; /* Ensures both divs are of equal height */
+    gap: 20px; /* Adds some space between the divs */
+    padding: 20px;
+    /*border: 1px solid #ccc;*/
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+}
+
+.header-left, .header-right {
+    flex: 1; /* Allows both divs to take equal width */
+    min-width: 300px; /* Ensures a minimum width before wrapping */
+    padding: 10px;
+    /*background-color: #f9f9f9;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+}
+
+.header-left h1 {
+    margin-bottom: 5px;
+}
+
+.header-left h2, .header-right h2 {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stacks the divs vertically on smaller screens */
+    }
+}
