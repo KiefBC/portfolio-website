@@ -1,3 +1,5 @@
+import ProjectCards from "./ProjectCards";
+
 const Header = () => {
     return (
         <section className="header-container max-w-7xl mx-auto p-8 lg:py-16 lg:px-20">
@@ -8,6 +10,10 @@ const Header = () => {
                 <p className="text-lg text-gray-500 mb-6">
                     I'm a passionate programmer who loves creating meaningful and innovative solutions. :)
                 </p>
+            </div>
+            {/* Right section with Card */}
+            <div className="w-full lg:w-1/2">
+                <ProjectCards />
             </div>
         </section>
     );

@@ -1,7 +1,6 @@
-import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'; // React Icons for social icons
 
-const Socials: React.FC = () => {
+const Socials = () => {
     return (
         <div className="socials fixed bottom-0 left-10 flex flex-col items-center space-y-6">
             <a
@@ -28,7 +27,6 @@ const Socials: React.FC = () => {
             >
                 <FaTwitter size={24} />
             </a>
-            <div className="w-0.5 h-24 bg-gray-500 mt-4"></div> {/* Line below the icons */}
         </div>
     );
 };
