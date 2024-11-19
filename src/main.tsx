@@ -1,5 +1,5 @@
-import {StrictMode} from 'react'
-import {createRoot} from 'react-dom/client'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import './index.css'
 import Navbar from "./components/Navbar.tsx";
 import Header from "./components/Header.tsx";
@@ -8,11 +8,11 @@ import SocialButtons from "./components/SocialButtons.tsx";
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <Navbar/>
-        <Header/>
-        <SocialButtons/>
+        <Navbar />
+        <Header />
+        <SocialButtons />
         <main className="container px-6 sm:px-8 w-1/2">
-            <Timeline/>
+            <Timeline />
         </main>
     </StrictMode>,
 )
