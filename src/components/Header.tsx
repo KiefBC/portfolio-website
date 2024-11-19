@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Header: React.FC = () => {
+const Header = () => {
     return (
         <section className="header-container max-w-7xl mx-auto p-8 lg:py-16 lg:px-20">
             {/* Left section with name, title, and brief intro */}
