@@ -1,6 +1,4 @@
-import React from 'react'
-
-const Navbar: React.FC = () => {
+const Navbar = () => {
     return (
         <nav className="navbar bg-base-100 w-full justify-between">
             <a className="btn btn-ghost text-xl">Kiefer's Portfolio</a>
