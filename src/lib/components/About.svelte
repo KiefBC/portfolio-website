@@ -11,12 +11,12 @@
 	];
 	
 	const interests = [
-		'AI & Machine Learning',
-		'Deep Learning & Neural Networks',
 		'Systems Programming',
 		'Game Development',
 		'Web Scraping & Automation',
-		'Personal Development Tools'
+		'Personal Development Tools',
+		'Algorithm Implementation',
+		'Cross-Platform Development'
 	];
 </script>
 
@@ -31,9 +31,9 @@
 			<div>
 				<h3 class="text-2xl font-bold text-white mb-6">Who I Am</h3>
 				<p class="text-slate-300 text-lg mb-6 leading-relaxed">
-					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in AI, Machine Learning, 
-					Deep Learning, and Neural Networks. My programming journey spans multiple languages including Rust, Swift, 
-					C, and Go, with a particular love for systems programming and efficient code.
+					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in systems programming 
+					and algorithm implementation. My programming journey spans multiple languages including Rust, Swift, 
+					C, and Go, with a particular love for building efficient, performance-focused applications.
 				</p>
 				<p class="text-slate-300 text-lg mb-6 leading-relaxed">
 					I work with modern frameworks like Svelte, Leptos, and Tauri, and my projects range from classic game 
