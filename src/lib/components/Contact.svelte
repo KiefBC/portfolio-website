@@ -30,20 +30,20 @@
 		{
 			icon: '📧',
 			title: 'Email',
-			value: 'hello@example.com',
-			link: 'mailto:hello@example.com'
+			value: 'kiefx@pm.me',
+			link: 'mailto:kiefx@pm.me'
 		},
 		{
 			icon: '💼',
 			title: 'LinkedIn',
-			value: 'linkedin.com/in/yourprofile',
-			link: 'https://linkedin.com/in/yourprofile'
+			value: 'linkedin.com/in/kieferh',
+			link: 'https://www.linkedin.com/in/kieferh/'
 		},
 		{
 			icon: '🐙',
 			title: 'GitHub',
-			value: 'github.com/yourusername',
-			link: 'https://github.com/yourusername'
+			value: 'github.com/KiefBC',
+			link: 'https://github.com/KiefBC'
 		}
 	];
 </script>

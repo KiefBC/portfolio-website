@@ -2,63 +2,33 @@
 	const projects = [
 		{
 			id: 1,
-			title: "High-Performance Web Server",
-			description: "A multi-threaded HTTP server built in Rust with custom thread pool and connection handling. Supports concurrent requests with minimal memory footprint.",
-			technologies: ["Rust", "Tokio", "HTTP", "Systems Programming"],
-			github: "https://github.com/yourusername/rust-web-server",
+			title: "Asteroids Game in Rust",
+			description: "A classic Asteroids arcade game built using the Bevy game engine. Features WASD movement controls, wireframe toggle functionality, and traditional space shooter gameplay mechanics.",
+			technologies: ["Rust", "Bevy", "Game Development", "2D Graphics"],
+			github: "https://github.com/KiefBC/Asteroids-Rust",
 			demo: null,
 			image: "🚀",
 			featured: true
 		},
 		{
 			id: 2,
-			title: "Distributed Task Queue",
-			description: "A scalable task queue system built with Go, featuring Redis backend, worker pools, and automatic retry mechanisms for reliable job processing.",
-			technologies: ["Go", "Redis", "Docker", "Distributed Systems"],
-			github: "https://github.com/yourusername/go-task-queue",
+			title: "WWE Universe Manager",
+			description: "A comprehensive desktop application for managing a professional wrestling universe. Built with modern Rust technologies including Tauri 2.0, Leptos frontend, and SQLite database with responsive WWE-themed interface.",
+			technologies: ["Rust", "Tauri", "Leptos", "SQLite", "Diesel ORM", "Tailwind CSS"],
+			github: "https://github.com/KiefBC/wwe-universe-manager",
 			demo: null,
-			image: "⚙️",
+			image: "🤼",
 			featured: true
 		},
 		{
 			id: 3,
-			title: "CLI Tool for Dev Productivity",
-			description: "A command-line utility that helps developers manage their workflow, track time, and automate common development tasks across multiple projects.",
-			technologies: ["Rust", "CLI", "File Systems", "Productivity"],
-			github: "https://github.com/yourusername/dev-cli",
+			title: "Acuendo Static Site Generator",
+			description: "A Python-based static site generator that transforms Markdown content into static HTML websites. Features Jinja2 templating, customizable themes, and fast static file generation with no database required.",
+			technologies: ["Python", "Markdown", "Jinja2", "Static Sites", "Shell Scripting"],
+			github: "https://github.com/KiefBC/Acuendo-SSG",
 			demo: null,
-			image: "💻",
+			image: "📝",
 			featured: true
-		},
-		{
-			id: 4,
-			title: "Real-time Data Pipeline",
-			description: "A streaming data processing pipeline that handles high-throughput event processing with Kafka and Go workers, including monitoring and alerting.",
-			technologies: ["Go", "Kafka", "PostgreSQL", "Monitoring"],
-			github: "https://github.com/yourusername/data-pipeline",
-			demo: null,
-			image: "📊",
-			featured: false
-		},
-		{
-			id: 5,
-			title: "Container Orchestration Tool",
-			description: "A lightweight container management tool inspired by Docker Compose but optimized for development workflows with hot reloading and better logging.",
-			technologies: ["Go", "Docker", "YAML", "DevOps"],
-			github: "https://github.com/yourusername/container-tool",
-			demo: null,
-			image: "🐳",
-			featured: false
-		},
-		{
-			id: 6,
-			title: "Performance Monitoring Library",
-			description: "A low-overhead performance monitoring library for Rust applications with custom metrics collection and visualization dashboard.",
-			technologies: ["Rust", "WebAssembly", "Performance", "Monitoring"],
-			github: "https://github.com/yourusername/perf-monitor",
-			demo: null,
-			image: "📈",
-			featured: false
 		}
 	];
 	

@@ -1,36 +1,36 @@
 <script lang="ts">
 	const experience = [
 		{
-			title: "Senior Software Developer",
-			company: "Tech Company",
-			period: "2022 - Present",
-			description: "Lead development of high-performance backend services using Go and Rust. Architected microservices handling 1M+ requests per day.",
+			title: "Senior Software Engineer",
+			company: "Lorem Ipsum Technologies",
+			period: "2023 - Present",
+			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
 			achievements: [
-				"Reduced API response times by 60% through optimization",
-				"Led team of 4 developers on critical infrastructure projects",
-				"Implemented automated testing reducing deployment issues by 80%"
+				"Mauris blandit aliquet elit, eget tincidunt nibh pulvinar",
+				"Donec rutrum congue leo eget malesuada vestibulum",
+				"Pellentesque habitant morbi tristique senectus et netus"
 			]
 		},
 		{
-			title: "Full Stack Developer",
-			company: "Startup Inc",
-			period: "2020 - 2022",
-			description: "Built scalable web applications using modern technologies. Worked across the entire stack from database design to frontend implementation.",
+			title: "Software Developer",
+			company: "Dolor Sit Solutions",
+			period: "2021 - 2023",
+			description: "Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.",
 			achievements: [
-				"Developed real-time features serving 10k+ concurrent users",
-				"Created CI/CD pipelines reducing deployment time by 70%",
-				"Mentored junior developers and established coding standards"
+				"Vivamus magna justo, lacinia eget consectetur sed",
+				"Cras ultricies ligula sed magna dictum porta",
+				"Nulla quis lorem ut libero malesuada feugiat"
 			]
 		},
 		{
-			title: "Software Engineer",
-			company: "Enterprise Corp",
-			period: "2018 - 2020",
-			description: "Maintained and enhanced legacy systems while gradually modernizing the technology stack. Focus on performance and reliability improvements.",
+			title: "Junior Developer",
+			company: "Consectetur Corp",
+			period: "2019 - 2021",
+			description: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada.",
 			achievements: [
-				"Migrated critical systems from monolith to microservices",
-				"Improved system uptime from 99.5% to 99.9%",
-				"Reduced technical debt through systematic refactoring"
+				"Lorem ipsum dolor sit amet consectetur adipiscing",
+				"Quisque velit nisi pretium ut lacinia in elementum",
+				"Sed porttitor lectus nibh vestibulum mattis ullamcorper"
 			]
 		}
 	];
@@ -38,16 +38,17 @@
 	const education = [
 		{
 			degree: "Bachelor of Science in Computer Science",
-			school: "University Name",
-			period: "2014 - 2018",
-			details: "Focus on Systems Programming, Algorithms, and Software Engineering"
+			school: "Lorem Ipsum University",
+			period: "2015 - 2019",
+			details: "Magna cum laude. Focus on consectetur adipiscing elit and vestibulum ante ipsum primis in faucibus"
 		}
 	];
 	
 	const certifications = [
-		"AWS Certified Solutions Architect",
-		"Docker Certified Associate",
-		"Go Programming Certificate"
+		"Lorem Ipsum Professional Certification",
+		"Dolor Sit Amet Associate Certification",
+		"Consectetur Adipiscing Elite Certificate",
+		"Vestibulum Ante Ipsum Specialist"
 	];
 </script>
 
