@@ -1,38 +1,39 @@
-# sv
+# Portfolio Website
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A modern, responsive portfolio website showcasing personal projects, experience, and contact information. Built with SvelteKit, TypeScript, and Tailwind CSS.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Responsive Design**: Optimized for all screen sizes from mobile to desktop
+- **Interactive Components**: Animated typing effect, smooth scrolling navigation, and hover animations
+- **Project Showcase**: Display of personal projects with technology tags and GitHub links
+- **Professional Resume**: Experience, education, and certifications sections
+- **Contact Form**: Interactive contact form with status feedback
+- **Modern Styling**: Dark theme with purple accents using Tailwind CSS
+- **Accessibility**: ARIA labels and keyboard navigation support
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
 
-```bash
-# create a new project in the current directory
-npx sv create
+## Technology Stack
 
-# create a new project in my-app
-npx sv create my-app
-```
+- **Framework**: SvelteKit with TypeScript
+- **Styling**: Tailwind CSS
+- **Build Tool**: Vite
+- **Language**: TypeScript
 
-## Developing
+## Project Structure
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- `src/lib/components/` - Reusable Svelte components
+  - `Navigation.svelte` - Fixed navigation bar with mobile menu
+  - `Hero.svelte` - Landing section with animated typing effect
+  - `About.svelte` - About section with skills and interests
+  - `Projects.svelte` - Personal projects showcase
+  - `Resume.svelte` - Professional experience and education
+  - `Contact.svelte` - Contact form and information
 
-```bash
-npm run dev
+## Current Projects Featured
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+- **Asteroids Game in Rust** - Classic arcade game using Bevy engine
+- **WWE Universe Manager** - Desktop application built with Tauri 2.0 and Leptos
+- **Acuendo Static Site Generator** - Python-based SSG with Markdown support
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+This portfolio serves as both a professional showcase and a demonstration of modern web development practices using the SvelteKit framework.
