@@ -1,54 +1,30 @@
 <script lang="ts">
 	const experience = [
 		{
-			title: "Senior Software Engineer",
-			company: "Lorem Ipsum Technologies",
-			period: "2023 - Present",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+			title: "Student Intern",
+			company: "Racerocks 3D",
+			period: "2024 - 2025",
+			description: "Worked in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training future military personnel.",
 			achievements: [
-				"Mauris blandit aliquet elit, eget tincidunt nibh pulvinar",
-				"Donec rutrum congue leo eget malesuada vestibulum",
-				"Pellentesque habitant morbi tristique senectus et netus"
-			]
-		},
-		{
-			title: "Software Developer",
-			company: "Dolor Sit Solutions",
-			period: "2021 - 2023",
-			description: "Sed porttitor lectus nibh. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus.",
-			achievements: [
-				"Vivamus magna justo, lacinia eget consectetur sed",
-				"Cras ultricies ligula sed magna dictum porta",
-				"Nulla quis lorem ut libero malesuada feugiat"
-			]
-		},
-		{
-			title: "Junior Developer",
-			company: "Consectetur Corp",
-			period: "2019 - 2021",
-			description: "Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Donec sollicitudin molestie malesuada.",
-			achievements: [
-				"Lorem ipsum dolor sit amet consectetur adipiscing",
-				"Quisque velit nisi pretium ut lacinia in elementum",
-				"Sed porttitor lectus nibh vestibulum mattis ullamcorper"
+				"Developed full-stack components for military LMS platform using backend and frontend technologies",
+				"Built and maintained RESTful APIs for the training management system",
+				"Gained comprehensive experience across the entire software development lifecycle",
+				"Collaborated remotely with cross-functional teams on defence training solutions"
 			]
 		}
 	];
 	
 	const education = [
 		{
-			degree: "Bachelor of Science in Computer Science",
-			school: "Lorem Ipsum University",
-			period: "2015 - 2019",
-			details: "Magna cum laude. Focus on consectetur adipiscing elit and vestibulum ante ipsum primis in faucibus"
+			degree: "Information & Computer Systems Diploma",
+			school: "Camosun College",
+			period: "2023 - 2025",
+			details: "Graduated with A+ average. Comprehensive program covering systems programming, software development, and computer systems fundamentals."
 		}
 	];
 	
 	const certifications = [
-		"Lorem Ipsum Professional Certification",
-		"Dolor Sit Amet Associate Certification",
-		"Consectetur Adipiscing Elite Certificate",
-		"Vestibulum Ante Ipsum Specialist"
+		"Harvard CS50X Online Computer Science Program"
 	];
 </script>
 
@@ -58,8 +34,8 @@
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Resume</h2>
 			<div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
 			<p class="text-slate-300 text-lg max-w-2xl mx-auto">
-				My professional journey in software development, focusing on systems programming, 
-				performance optimization, and building scalable applications.
+				My professional journey in software development, focusing on building robust systems, 
+				optimizing performance, and creating scalable applications.
 			</p>
 		</div>
 		

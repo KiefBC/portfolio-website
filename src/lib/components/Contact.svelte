@@ -55,7 +55,7 @@
 			<div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
 			<p class="text-slate-300 text-lg max-w-2xl mx-auto">
 				I'm always interested in discussing new opportunities, collaborating on projects, 
-				or just having a chat about technology and programming.
+				or having a chat about technology and programming.
 			</p>
 		</div>
 		
@@ -64,8 +64,8 @@
 			<div>
 				<h3 class="text-2xl font-bold text-white mb-8">Let's Connect</h3>
 				<p class="text-slate-300 text-lg mb-8 leading-relaxed">
-					Whether you have a project in mind, want to discuss technology, or just want to say hello, 
-					I'd love to hear from you. Feel free to reach out through any of the channels below.
+					Whether you want to discuss technology, pitch a project, or simply say hello, 
+					I'd love to hear from you. Reach out through any of the channels below.
 				</p>
 				
 				<div class="space-y-6">

@@ -81,7 +81,7 @@
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Personal Projects</h2>
 			<div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
 			<p class="text-slate-300 text-lg max-w-2xl mx-auto">
-				Here are some of the projects I've built in my spare time, showcasing my passion for systems programming, 
+				Here are some of the projects I've built in my spare time. They reflect my passion for systems programming, 
 				performance optimization, and solving real-world problems.
 			</p>
 		</div>
