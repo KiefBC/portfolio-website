@@ -7,6 +7,22 @@
 	let currentRole = 0;
 	let isDeleting = false;
 	
+	function smoothScrollTo(targetId: string) {
+		const element = document.getElementById(targetId);
+		if (element) {
+			element.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}
+	}
+	
+	function handleNavClick(event: Event, href: string) {
+		event.preventDefault();
+		const targetId = href.substring(1); // Remove the '#'
+		smoothScrollTo(targetId);
+	}
+	
 	onMount(() => {
 		const typeEffect = () => {
 			const currentText = roles[currentRole];
@@ -61,12 +77,14 @@
 			<a 
 				href="#projects" 
 				class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+				on:click={(e) => handleNavClick(e, '#projects')}
 			>
 				View My Work
 			</a>
 			<a 
 				href="#contact" 
 				class="px-8 py-3 border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+				on:click={(e) => handleNavClick(e, '#contact')}
 			>
 				Get In Touch
 			</a>

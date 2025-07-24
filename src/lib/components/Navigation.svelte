@@ -8,6 +8,23 @@
 		{ name: 'Resume', href: '#resume' },
 		{ name: 'Contact', href: '#contact' }
 	];
+	
+	function smoothScrollTo(targetId: string) {
+		const element = document.getElementById(targetId);
+		if (element) {
+			element.scrollIntoView({
+				behavior: 'smooth',
+				block: 'start'
+			});
+		}
+	}
+	
+	function handleNavClick(event: Event, href: string) {
+		event.preventDefault();
+		const targetId = href.substring(1); // Remove the '#'
+		smoothScrollTo(targetId);
+		isMenuOpen = false; // Close mobile menu if open
+	}
 </script>
 
 <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-700">
@@ -21,6 +38,7 @@
 					<a 
 						href={item.href} 
 						class="text-slate-300 hover:text-white transition-colors duration-200"
+						on:click={(e) => handleNavClick(e, item.href)}
 					>
 						{item.name}
 					</a>
@@ -46,7 +64,7 @@
 					<a 
 						href={item.href} 
 						class="block py-2 text-slate-300 hover:text-white transition-colors duration-200"
-						on:click={() => isMenuOpen = false}
+						on:click={(e) => handleNavClick(e, item.href)}
 					>
 						{item.name}
 					</a>
