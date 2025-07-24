@@ -1,4 +1,16 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	
+	// Shuffle function using Fisher-Yates algorithm
+	function shuffleArray<T>(array: T[]): T[] {
+		const shuffled = [...array];
+		for (let i = shuffled.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+		}
+		return shuffled;
+	}
+	
 	const projects = [
 		{
 			id: 1,
@@ -52,8 +64,15 @@
 		}
 	];
 	
+	let shuffledProjects = projects;
 	let showAll = false;
-	$: displayedProjects = showAll ? projects : projects.filter(p => p.featured);
+	
+	// Shuffle projects on component mount
+	onMount(() => {
+		shuffledProjects = shuffleArray(projects);
+	});
+	
+	$: displayedProjects = showAll ? shuffledProjects : shuffledProjects.filter(p => p.featured);
 </script>
 
 <section id="projects" class="py-20 bg-slate-900">
