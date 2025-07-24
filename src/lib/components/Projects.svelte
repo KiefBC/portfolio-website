@@ -29,6 +29,26 @@
 			demo: null,
 			image: "📝",
 			featured: true
+		},
+		{
+			id: 4,
+			title: "Python Maze Solver",
+			description: "An interactive maze generation and solving application with graphical interface using Tkinter. Features customizable maze dimensions, adjustable animation speed, and visualizes the depth-first search solving process with recursive backtracking.",
+			technologies: ["Python", "Tkinter", "Algorithms", "GUI", "Visualization"],
+			github: "https://github.com/KiefBC/Python-Depth-Search-Maze-Solver",
+			demo: null,
+			image: "🧩",
+			featured: false
+		},
+		{
+			id: 5,
+			title: "Rust Shell",
+			description: "A POSIX-compliant shell implementation built in Rust as part of the CodeCrafters challenge. Features command interpretation, external program execution, builtin commands (cd, pwd, echo), and a complete REPL interface.",
+			technologies: ["Rust", "Systems Programming", "POSIX", "CLI", "Shell"],
+			github: "https://github.com/KiefBC/rust-shell",
+			demo: null,
+			image: "💻",
+			featured: false
 		}
 	];
 	
