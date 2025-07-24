@@ -11,12 +11,12 @@
 	];
 	
 	const interests = [
+		'AI & Machine Learning',
+		'Deep Learning & Neural Networks',
 		'Systems Programming',
-		'Web Development',
-		'DevOps & Infrastructure',
-		'Open Source Contributions',
-		'Performance Optimization',
-		'Distributed Systems'
+		'Game Development',
+		'Web Scraping & Automation',
+		'Personal Development Tools'
 	];
 </script>
 
@@ -31,14 +31,15 @@
 			<div>
 				<h3 class="text-2xl font-bold text-white mb-6">Who I Am</h3>
 				<p class="text-slate-300 text-lg mb-6 leading-relaxed">
-					I'm a passionate software developer with a love for systems programming and performance-critical applications. 
-					My journey started with curiosity about how computers work at a low level, which led me to fall in love with 
-					Rust and Go for their balance of performance, safety, and developer experience.
+					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in AI, Machine Learning, 
+					Deep Learning, and Neural Networks. My programming journey spans multiple languages including Rust, Swift, 
+					C, and Go, with a particular love for systems programming and efficient code.
 				</p>
 				<p class="text-slate-300 text-lg mb-6 leading-relaxed">
-					When I'm not coding professionally, you'll find me working on personal projects, contributing to open source, 
-					or exploring new technologies. I believe in writing clean, efficient code and am always looking for ways to 
-					improve both my technical skills and understanding of software architecture.
+					I work with modern frameworks like Svelte, Leptos, and Tauri, and my projects range from classic game 
+					implementations to web scrapers and personal productivity tools. I believe in writing code guided by 
+					efficiency and constantly exploring new domains to expand my programming horizons. My editor of choice? 
+					Neovim, naturally.
 				</p>
 				
 				<h4 class="text-xl font-semibold text-white mb-4">What I'm Passionate About</h4>
