@@ -5,20 +5,37 @@
 	let textIndex = 0;
 	const roles = ['Software Developer', 'Rust Developer', 'Go Developer', 'Systems Engineer'];
 	let currentRole = 0;
+	let isDeleting = false;
 	
 	onMount(() => {
 		const typeEffect = () => {
 			const currentText = roles[currentRole];
-			if (textIndex < currentText.length) {
-				typedText = currentText.slice(0, textIndex + 1);
-				textIndex++;
-				setTimeout(typeEffect, 100);
+			
+			if (!isDeleting) {
+				// Typing phase
+				if (textIndex < currentText.length) {
+					typedText = currentText.slice(0, textIndex + 1);
+					textIndex++;
+					setTimeout(typeEffect, 100);
+				} else {
+					// Wait before starting to delete
+					setTimeout(() => {
+						isDeleting = true;
+						typeEffect();
+					}, 2000);
+				}
 			} else {
-				setTimeout(() => {
-					textIndex = 0;
+				// Deleting phase
+				if (textIndex > 0) {
+					typedText = currentText.slice(0, textIndex - 1);
+					textIndex--;
+					setTimeout(typeEffect, 50); // Faster deletion
+				} else {
+					// Move to next role and start typing again
+					isDeleting = false;
 					currentRole = (currentRole + 1) % roles.length;
-					typeEffect();
-				}, 2000);
+					setTimeout(typeEffect, 200); // Brief pause before typing next
+				}
 			}
 		};
 		typeEffect();
