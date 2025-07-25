@@ -30,19 +30,16 @@
 		{
 			icon: '📧',
 			title: 'Email',
-			value: 'kiefx@pm.me',
 			link: 'mailto:kiefx@pm.me'
 		},
 		{
 			icon: '💼',
 			title: 'LinkedIn',
-			value: 'linkedin.com/in/kieferh',
 			link: 'https://www.linkedin.com/in/kieferh/'
 		},
 		{
 			icon: '🐙',
 			title: 'GitHub',
-			value: 'github.com/KiefBC',
 			link: 'https://github.com/KiefBC'
 		}
 	];
@@ -73,16 +70,15 @@
 						<a 
 							href={info.link}
 							target="_blank"
-							class="flex items-center p-4 bg-slate-800 rounded-lg hover:bg-slate-700 transition-colors duration-300 group"
+							class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 group hover:scale-105 transform"
 						>
-							<span class="text-3xl mr-4 group-hover:scale-110 transition-transform duration-300">
-								{info.icon}
-							</span>
-							<div>
-								<h4 class="text-white font-semibold mb-1">{info.title}</h4>
-								<p class="text-slate-300 group-hover:text-purple-400 transition-colors duration-300">
-									{info.value}
-								</p>
+							<div class="flex items-center">
+								<span class="text-3xl mr-4 group-hover:scale-110 transition-transform duration-300">
+									{info.icon}
+								</span>
+								<div>
+									<h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors duration-300">{info.title}</h4>
+								</div>
 							</div>
 						</a>
 					{/each}
