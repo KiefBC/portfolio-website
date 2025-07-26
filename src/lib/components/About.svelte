@@ -1,13 +1,12 @@
 <script lang="ts">
 	const skills = [
 		{ name: 'Rust', icon: '🦀', level: 90 },
-		{ name: 'Go', icon: '🐹', level: 85 },
+		{ name: 'Git', icon: '📚', level: 90 },
 		{ name: 'TypeScript', icon: '📘', level: 88 },
-		{ name: 'Python', icon: '🐍', level: 80 },
-		{ name: 'JavaScript', icon: '📜', level: 85 },
-		{ name: 'Docker', icon: '🐳', level: 75 },
+		{ name: 'Go', icon: '🐹', level: 85 },
 		{ name: 'Linux', icon: '🐧', level: 85 },
-		{ name: 'Git', icon: '📚', level: 90 }
+		{ name: 'Python', icon: '🐍', level: 80 },
+		{ name: 'Docker', icon: '🐳', level: 75 }
 	];
 	
 	const interests = [
