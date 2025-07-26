@@ -16,10 +16,10 @@
 	
 	const education = [
 		{
-			degree: "Information & Computer Systems Associates Degree",
+			degree: "Information & Computer Systems Diploma",
 			school: "Camosun College",
 			period: "2023 - 2025",
-			details: "Graduated with A+ average. Comprehensive program covering systems programming, software development, and computer systems fundamentals."
+			details: "A 2.5-year program equivalent in scope to an Associate Degree, with emphasis on software development, databases, systems analysis, networking, and hands-on projects using industry-standard tools."
 		}
 	];
 	
