@@ -3,7 +3,7 @@
 		{
 			title: "Student Intern",
 			company: "Racerocks 3D",
-			period: "2024 - 2025",
+			period: "2023 - 2025",
 			description: "Worked in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training future military personnel.",
 			achievements: [
 				"Developed full-stack components for military LMS platform using backend and frontend technologies",
@@ -16,7 +16,7 @@
 	
 	const education = [
 		{
-			degree: "Information & Computer Systems Diploma",
+			degree: "Information & Computer Systems Associates Degree",
 			school: "Camosun College",
 			period: "2023 - 2025",
 			details: "Graduated with A+ average. Comprehensive program covering systems programming, software development, and computer systems fundamentals."
