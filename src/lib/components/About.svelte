@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { scrollAnimationAction } from '$lib/utils/scrollAnimation';
+	
 	const skills = [
 		{ name: 'Rust', icon: '🦀', level: 90, description: 'Built desktop apps with Tauri 2.0 & Leptos (WWE Universe Manager), async web scrapers with tokio/reqwest, games like Asteroids, and shell implementations. Expert in systems programming and WebAssembly.' },
 		{ name: 'Git', icon: '📚', level: 90, description: 'Version control across 20+ repositories including complex projects like WWE Universe Manager. Experience with branching, collaboration, and maintaining dotfiles configurations.' },
@@ -21,13 +23,15 @@
 
 <section id="about" class="py-20 bg-slate-800">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
+			 use:scrollAnimationAction={{ threshold: 0.2 }}>
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
 			<div class="w-24 h-1 bg-purple-500 mx-auto"></div>
 		</div>
 		
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-			<div>
+			<div class="opacity-0 translate-x-[-50px] transition-all duration-700 ease-out delay-200 animate-out"
+				 use:scrollAnimationAction={{ threshold: 0.3 }}>
 				<h3 class="text-2xl font-bold text-white mb-6">Who I Am</h3>
 				<p class="text-slate-300 text-lg mb-6 leading-relaxed">
 					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in systems programming 
@@ -52,11 +56,14 @@
 				</div>
 			</div>
 			
-			<div>
+			<div class="opacity-0 translate-x-[50px] transition-all duration-700 ease-out delay-400 animate-out"
+				 use:scrollAnimationAction={{ threshold: 0.3 }}>
 				<h3 class="text-2xl font-bold text-white mb-6">Technical Skills</h3>
 				<div class="space-y-4">
-					{#each skills as skill}
-						<div class="group relative bg-slate-700 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-slate-600 hover:shadow-lg cursor-pointer">
+					{#each skills as skill, index}
+						<div class="group relative bg-slate-700 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-slate-600 hover:shadow-lg cursor-pointer opacity-0 translate-x-[30px] animate-out"
+							 use:scrollAnimationAction={{ threshold: 0.2 }}
+							 style="transition-delay: {(index + 1) * 100}ms">
 							<div class="flex justify-between items-center mb-2">
 								<span class="text-white font-medium flex items-center">
 									<span class="mr-2 transform transition-transform duration-300 hover:scale-110">{skill.icon}</span>
@@ -72,7 +79,7 @@
 							</div>
 							
 							<!-- Tooltip -->
-							<div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-slate-900 text-white text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10 max-w-xs sm:max-w-sm whitespace-normal">
+							<div class="absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 mb-2 px-3 py-2 bg-slate-900 text-white text-sm rounded-lg shadow-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-10 max-w-xs sm:max-w-sm whitespace-normal">
 								<p class="text-center leading-relaxed">{skill.description}</p>
 								<!-- Tooltip arrow -->
 								<div class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-slate-900"></div>

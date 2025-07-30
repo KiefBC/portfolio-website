@@ -1,1 +1,21 @@
 @import 'tailwindcss';
+
+/* Scroll Animation Classes */
+.animate-in {
+	opacity: 1 !important;
+	transform: translateX(0) translateY(0) !important;
+}
+
+.animate-out {
+	opacity: 0;
+	transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y));
+}
+
+/* 3D Transform Classes */
+.perspective-1000 {
+	perspective: 1000px;
+}
+
+.preserve-3d {
+	transform-style: preserve-3d;
+}

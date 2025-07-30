@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { scrollAnimationAction } from '$lib/utils/scrollAnimation';
 	
 	// Shuffle function using Fisher-Yates algorithm
 	function shuffleArray<T>(array: T[]): T[] {
@@ -77,7 +78,8 @@
 
 <section id="projects" class="py-20 bg-slate-900">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-16">
+		<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
+			 use:scrollAnimationAction={{ threshold: 0.2 }}>
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Personal Projects</h2>
 			<div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
 			<p class="text-slate-300 text-lg max-w-2xl mx-auto">
@@ -88,7 +90,7 @@
 		
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
 			{#each displayedProjects as project}
-				<div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+				<div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 hover:scale-105 group perspective-1000 preserve-3d">
 					<div class="p-6">
 						<div class="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
 							{project.image}
