@@ -58,16 +58,16 @@
 	});
 </script>
 
-<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-purple-100 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-500">
-	<div class="text-center px-4 sm:px-6 lg:px-8">
+<section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-purple-100 to-slate-100 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-500 w-full overflow-hidden">
+	<div class="text-center px-4 sm:px-6 lg:px-8 w-full max-w-4xl mx-auto">
 		<div class="mb-8">
-			<h1 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-4 animate-fade-in transition-colors duration-300">
+			<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-4 animate-fade-in transition-colors duration-300">
 				Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Kiefer</span>
 			</h1>
-			<div class="text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-8 h-12 animate-fade-in-delay-200 transition-colors duration-300">
+			<div class="text-xl sm:text-2xl md:text-3xl text-slate-700 dark:text-slate-300 mb-8 h-12 animate-fade-in-delay-200 transition-colors duration-300">
 				I'm a <span class="text-purple-600 dark:text-purple-400 font-semibold">{typedText}<span class="animate-pulse">|</span></span>
 			</div>
-			<p class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-400 transition-colors duration-300">
+			<p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-400 transition-colors duration-300">
 				Passionate about building efficient, scalable systems and creating innovative solutions 
 				with modern technologies. I love exploring new programming languages and diving deep into personal projects.
 			</p>

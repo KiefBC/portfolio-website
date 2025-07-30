@@ -1,5 +1,11 @@
 @import 'tailwindcss';
 
+/* Global overflow prevention */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 /* Scroll Animation Classes */
 .animate-in {
 	opacity: 1 !important;
@@ -9,6 +15,13 @@
 .animate-out {
 	opacity: 0;
 	transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y));
+}
+
+/* Fallback for when JavaScript is disabled or fails */
+.no-js .animate-out,
+html:not(.js-loaded) .animate-out {
+	opacity: 1;
+	transform: none;
 }
 
 /* 3D Transform Classes */

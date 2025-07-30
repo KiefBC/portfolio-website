@@ -14,6 +14,9 @@
 	import { initializePWA } from '$lib/utils/pwa';
 	
 	onMount(() => {
+		// Mark that JavaScript has loaded
+		document.documentElement.classList.add('js-loaded');
+		
 		// Initialize PWA functionality
 		initializePWA();
 		
@@ -40,7 +43,7 @@
 	<meta name="description" content="Portfolio of Kiefer, a passionate software developer specializing in Rust, Go, and systems programming. Explore my projects and experience." />
 </svelte:head>
 
-<div class="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative">
+<div class="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-x-hidden">
 	<!-- Main Content -->
 	<div class="relative z-10">
 		<Navigation />
