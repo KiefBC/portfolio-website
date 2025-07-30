@@ -2,14 +2,14 @@
 	const experience = [
 		{
 			title: "Student Intern",
-			company: "Racerocks 3D",
+			company: "Racerocks 3D (Remote)",
 			period: "2023 - 2025",
-			description: "Worked in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training future military personnel.",
+			description: "Worked remotely in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training future military personnel.",
 			achievements: [
 				"Developed full-stack components for military LMS platform using backend and frontend technologies",
 				"Built and maintained RESTful APIs for the training management system",
 				"Gained comprehensive experience across the entire software development lifecycle",
-				"Collaborated remotely with cross-functional teams on defence training solutions"
+				"Successfully collaborated with distributed teams across multiple time zones on defence training solutions"
 			]
 		}
 	];

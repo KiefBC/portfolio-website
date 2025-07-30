@@ -56,10 +56,10 @@
 				<h3 class="text-2xl font-bold text-white mb-6">Technical Skills</h3>
 				<div class="space-y-4">
 					{#each skills as skill}
-						<div class="bg-slate-700 rounded-lg p-4">
+						<div class="bg-slate-700 rounded-lg p-4 transform transition-all duration-300 hover:scale-105 hover:bg-slate-600 hover:shadow-lg cursor-pointer">
 							<div class="flex justify-between items-center mb-2">
 								<span class="text-white font-medium flex items-center">
-									<span class="mr-2">{skill.icon}</span>
+									<span class="mr-2 transform transition-transform duration-300 hover:scale-110">{skill.icon}</span>
 									{skill.name}
 								</span>
 								<span class="text-slate-300 text-sm">{skill.level}%</span>
