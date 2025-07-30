@@ -41,6 +41,13 @@
 			icon: '🚀'
 		},
 		{
+			id: 'blog',
+			label: 'Read Blog',
+			description: 'Technical articles and insights',
+			action: () => scrollTo('blog'),
+			icon: '📝'
+		},
+		{
 			id: 'resume',
 			label: 'View Resume',
 			description: 'Check out my experience',
