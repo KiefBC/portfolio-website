@@ -21,19 +21,19 @@
 	];
 </script>
 
-<section id="about" class="py-20 bg-slate-800">
+<section id="about" class="py-20 bg-white dark:bg-slate-800 transition-colors duration-300">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
 			 use:scrollAnimationAction={{ threshold: 0.2 }}>
-			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
+			<h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 transition-colors duration-300">About Me</h2>
 			<div class="w-24 h-1 bg-purple-500 mx-auto"></div>
 		</div>
 		
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 			<div class="opacity-0 translate-x-[-50px] transition-all duration-700 ease-out delay-200 animate-out"
 				 use:scrollAnimationAction={{ threshold: 0.3 }}>
-				<h3 class="text-2xl font-bold text-white mb-6">Who I Am</h3>
-				<p class="text-slate-300 text-lg mb-6 leading-relaxed">
+				<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 transition-colors duration-300">Who I Am</h3>
+				<p class="text-slate-600 dark:text-slate-300 text-lg mb-6 leading-relaxed transition-colors duration-300">
 					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in systems programming 
 					and algorithm implementation. My programming journey spans multiple languages including Rust, Swift, 
 					C, and Go, with a particular love for building efficient, performance-focused applications.
