@@ -24,13 +24,13 @@
 			.slice(0, 5) : [];
 </script>
 
-<section class="py-16 bg-slate-100 dark:bg-slate-800 transition-colors duration-300">
+<section class="py-16 bg-slate-100 dark:bg-slate-800 transition-colors duration-300 github-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-12 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
 			 use:scrollAnimationAction={{ threshold: 0.2 }}>
-			<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">GitHub Activity</h2>
-			<div class="w-24 h-1 bg-purple-500 mx-auto mb-4"></div>
-			<p class="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto">
+			<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4 github-title">GitHub Activity</h2>
+			<div class="w-24 h-1 bg-purple-500 mx-auto mb-4 projects-divider"></div>
+			<p class="text-slate-600 dark:text-slate-300 text-lg max-w-2xl mx-auto projects-description">
 				Real-time insights from my open source contributions and coding activity
 			</p>
 		</div>
@@ -47,7 +47,7 @@
 		{:else if stats}
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
 				<!-- Total Repositories -->
-				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out"
+				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out github-stat-card"
 					 use:scrollAnimationAction={{ threshold: 0.3 }}>
 					<div class="flex items-center justify-between mb-4">
 						<div class="p-3 bg-purple-100 dark:bg-purple-900 rounded-lg">
@@ -56,12 +56,12 @@
 							</svg>
 						</div>
 					</div>
-					<h3 class="text-2xl font-bold text-slate-900 dark:text-white">{stats.totalRepos}</h3>
+					<h3 class="text-2xl font-bold text-slate-900 dark:text-white github-stat-number">{stats.totalRepos}</h3>
 					<p class="text-slate-600 dark:text-slate-300 text-sm">Public Repositories</p>
 				</div>
 
 				<!-- Total Stars -->
-				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out"
+				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out github-stat-card"
 					 use:scrollAnimationAction={{ threshold: 0.3 }}
 					 style="transition-delay: 100ms">
 					<div class="flex items-center justify-between mb-4">
@@ -71,12 +71,12 @@
 							</svg>
 						</div>
 					</div>
-					<h3 class="text-2xl font-bold text-slate-900 dark:text-white">{stats.totalStars}</h3>
+					<h3 class="text-2xl font-bold text-slate-900 dark:text-white github-stat-number">{stats.totalStars}</h3>
 					<p class="text-slate-600 dark:text-slate-300 text-sm">Stars Earned</p>
 				</div>
 
 				<!-- Total Forks -->
-				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out"
+				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out github-stat-card"
 					 use:scrollAnimationAction={{ threshold: 0.3 }}
 					 style="transition-delay: 200ms">
 					<div class="flex items-center justify-between mb-4">
@@ -86,12 +86,12 @@
 							</svg>
 						</div>
 					</div>
-					<h3 class="text-2xl font-bold text-slate-900 dark:text-white">{stats.totalForks}</h3>
+					<h3 class="text-2xl font-bold text-slate-900 dark:text-white github-stat-number">{stats.totalForks}</h3>
 					<p class="text-slate-600 dark:text-slate-300 text-sm">Total Forks</p>
 				</div>
 
 				<!-- Most Starred Repo -->
-				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out"
+				<div class="bg-white dark:bg-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 opacity-0 translate-y-4 animate-out github-stat-card"
 					 use:scrollAnimationAction={{ threshold: 0.3 }}
 					 style="transition-delay: 300ms">
 					<div class="flex items-center justify-between mb-4">
@@ -102,10 +102,10 @@
 						</div>
 					</div>
 					{#if stats.mostStarredRepo}
-						<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 truncate">{stats.mostStarredRepo.name}</h3>
+						<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 truncate github-stat-number">{stats.mostStarredRepo.name}</h3>
 						<p class="text-slate-600 dark:text-slate-300 text-sm">{stats.mostStarredRepo.stargazers_count} ⭐</p>
 					{:else}
-						<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">No starred repos</h3>
+						<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1 github-stat-number">No starred repos</h3>
 						<p class="text-slate-600 dark:text-slate-300 text-sm">0 ⭐</p>
 					{/if}
 				</div>
@@ -113,15 +113,15 @@
 
 			<!-- Top Languages -->
 			{#if topLanguages.length > 0}
-				<div class="bg-white dark:bg-slate-700 rounded-xl p-8 shadow-lg opacity-0 translate-y-8 animate-out"
+				<div class="bg-white dark:bg-slate-700 rounded-xl p-8 shadow-lg opacity-0 translate-y-8 animate-out github-stat-card"
 					 use:scrollAnimationAction={{ threshold: 0.3 }}>
-					<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 text-center">Most Used Languages</h3>
+					<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6 text-center github-stat-number">Most Used Languages</h3>
 					<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
 						{#each topLanguages as [language, count], index}
-							<div class="text-center p-4 bg-slate-50 dark:bg-slate-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-500 transition-colors duration-200 opacity-0 translate-y-4 animate-out"
+							<div class="text-center p-4 bg-slate-50 dark:bg-slate-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-500 transition-colors duration-200 opacity-0 translate-y-4 animate-out github-stat-card"
 								 use:scrollAnimationAction={{ threshold: 0.4 }}
 								 style="transition-delay: {(index + 1) * 100}ms">
-								<div class="text-2xl font-bold text-purple-600 dark:text-purple-400">{count}</div>
+								<div class="text-2xl font-bold text-purple-600 dark:text-purple-400 github-stat-number">{count}</div>
 								<div class="text-sm text-slate-600 dark:text-slate-300 mt-1">{language}</div>
 							</div>
 						{/each}

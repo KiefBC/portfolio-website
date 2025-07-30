@@ -202,14 +202,14 @@
 	}
 </script>
 
-<section class="py-8 bg-white dark:bg-slate-900 transition-colors duration-300">
+<section class="py-8 bg-white dark:bg-slate-900 transition-colors duration-300 timeline-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Header -->
 		<div class="text-center mb-6 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
 			 use:scrollAnimationAction={{ threshold: 0.2 }}>
-			<h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2">Learning Journey</h2>
-			<div class="w-12 h-0.5 bg-purple-500 mx-auto mb-3"></div>
-			<p class="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto">
+			<h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2 timeline-title">Learning Journey</h2>
+			<div class="w-12 h-0.5 bg-purple-500 mx-auto mb-3 projects-divider"></div>
+			<p class="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto projects-description">
 				My evolution as a software developer, from first lines of code to building complex applications
 			</p>
 		</div>
@@ -220,9 +220,9 @@
 			<div class="flex flex-wrap justify-center gap-3">
 				<button
 					on:click={() => selectedCategory = null}
-					class="px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all duration-200 {
+					class="px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all duration-200 timeline-filter-button {
 						selectedCategory === null 
-							? 'bg-purple-600 text-white shadow-lg scale-105' 
+							? 'bg-purple-600 text-white shadow-lg scale-105 active' 
 							: 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-slate-600'
 					}"
 				>
@@ -232,9 +232,9 @@
 				{#each categories as category}
 					<button
 						on:click={() => selectCategory(category)}
-						class="px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all duration-200 {
+						class="px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all duration-200 timeline-filter-button {
 							selectedCategory === category 
-								? 'bg-purple-600 text-white shadow-lg scale-105' 
+								? 'bg-purple-600 text-white shadow-lg scale-105 active' 
 								: 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-slate-600'
 						}"
 					>
@@ -248,7 +248,7 @@
 		<!-- Timeline -->
 		<div class="relative">
 			<!-- Timeline Line -->
-			<div class="absolute left-6 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-blue-500 to-green-500"></div>
+			<div class="absolute left-6 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-blue-500 to-green-500 timeline-line"></div>
 
 			<!-- Timeline Items -->
 			<div class="space-y-6">
@@ -264,11 +264,11 @@
 						role="presentation"
 					>
 						<!-- Timeline Node -->
-						<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white dark:border-slate-900 {item.color} shadow-md z-10"></div>
+						<div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-3 h-3 rounded-full border-2 border-white dark:border-slate-900 {item.color} shadow-md z-10 timeline-dot"></div>
 
 						<!-- Content Card -->
 						<div class="ml-12 md:ml-0 md:w-5/12 {index % 2 === 0 ? 'md:pr-4' : 'md:pl-4'}">
-							<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 border-l-2 {item.color.replace('bg-', 'border-')}">
+							<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 border-l-2 {item.color.replace('bg-', 'border-')} timeline-item">
 								<!-- Year Badge -->
 								<div class="flex items-center justify-between mb-3">
 									<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium {item.color} text-white">
@@ -278,12 +278,12 @@
 								</div>
 
 								<!-- Title -->
-								<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+								<h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors timeline-item-title">
 									{item.title}
 								</h3>
 
 								<!-- Description -->
-								<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-3">
+								<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-3 timeline-item-description">
 									{item.description}
 								</p>
 
@@ -318,7 +318,7 @@
 				 use:scrollAnimationAction={{ threshold: 0.3 }}>
 				<button 
 					on:click={toggleShowAll}
-					class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-sm"
+					class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-sm timeline-expand-button"
 				>
 					{showAllItems ? `Show Less (${timelineItems.length - featuredItems.length} hidden)` : `Show All Timeline (${timelineItems.length - featuredItems.length} more)`}
 				</button>
@@ -329,28 +329,28 @@
 		{#if showAllItems || selectedCategory}
 			<div class="mt-8 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
 				 use:scrollAnimationAction={{ threshold: 0.3 }}>
-				<div class="bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg p-4 text-white">
+				<div class="bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg p-4 text-white timeline-stats">
 					<div class="text-center mb-4">
-						<h3 class="text-lg font-bold mb-1">Journey Statistics</h3>
-						<p class="text-purple-100 text-xs">Growth and continuous learning</p>
+						<h3 class="text-lg font-bold mb-1 timeline-stats-title">Journey Statistics</h3>
+						<p class="text-purple-100 text-xs timeline-stats-subtitle">Growth and continuous learning</p>
 					</div>
 					
 					<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
 						<div class="text-center">
-							<div class="text-xl font-bold mb-1">{timelineItems.filter(item => item.category === 'language').length}</div>
-							<div class="text-purple-100 text-xs">Languages</div>
+							<div class="text-xl font-bold mb-1 timeline-stats-number">{timelineItems.filter(item => item.category === 'language').length}</div>
+							<div class="text-purple-100 text-xs timeline-stats-label">Languages</div>
 						</div>
 						<div class="text-center">
-							<div class="text-xl font-bold mb-1">{timelineItems.filter(item => item.category === 'framework').length}</div>
-							<div class="text-purple-100 text-xs">Frameworks</div>
+							<div class="text-xl font-bold mb-1 timeline-stats-number">{timelineItems.filter(item => item.category === 'framework').length}</div>
+							<div class="text-purple-100 text-xs timeline-stats-label">Frameworks</div>
 						</div>
 						<div class="text-center">
-							<div class="text-xl font-bold mb-1">{timelineItems.filter(item => item.category === 'tool').length}</div>
-							<div class="text-purple-100 text-xs">Tools</div>
+							<div class="text-xl font-bold mb-1 timeline-stats-number">{timelineItems.filter(item => item.category === 'tool').length}</div>
+							<div class="text-purple-100 text-xs timeline-stats-label">Tools</div>
 						</div>
 						<div class="text-center">
-							<div class="text-xl font-bold mb-1">{timelineItems.filter(item => item.category === 'project').length}</div>
-							<div class="text-purple-100 text-xs">Milestones</div>
+							<div class="text-xl font-bold mb-1 timeline-stats-number">{timelineItems.filter(item => item.category === 'project').length}</div>
+							<div class="text-purple-100 text-xs timeline-stats-label">Milestones</div>
 						</div>
 					</div>
 				</div>

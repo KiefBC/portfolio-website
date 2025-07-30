@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-type Theme = 'light' | 'dark';
+type Theme = 'dark' | 'matrix';
 
 function createThemeStore() {
 	// Default to dark theme since current design is dark
@@ -14,30 +14,32 @@ function createThemeStore() {
 
 	const { subscribe, set, update } = writable<Theme>(initialTheme);
 
+	function applyTheme(theme: Theme) {
+		if (browser) {
+			// Remove all theme classes first
+			document.documentElement.classList.remove('dark', 'matrix');
+			
+			// Add the current theme class
+			document.documentElement.classList.add(theme);
+		}
+	}
+
 	return {
 		subscribe,
 		set: (theme: Theme) => {
 			if (browser) {
 				localStorage.setItem('theme', theme);
-				// Update document class for Tailwind dark mode
-				if (theme === 'dark') {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
+				applyTheme(theme);
 			}
 			set(theme);
 		},
 		toggle: () => {
 			update(currentTheme => {
-				const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+				// Cycle: dark → matrix → dark
+				const newTheme = currentTheme === 'dark' ? 'matrix' : 'dark';
 				if (browser) {
 					localStorage.setItem('theme', newTheme);
-					if (newTheme === 'dark') {
-						document.documentElement.classList.add('dark');
-					} else {
-						document.documentElement.classList.remove('dark');
-					}
+					applyTheme(newTheme);
 				}
 				return newTheme;
 			});
@@ -45,11 +47,7 @@ function createThemeStore() {
 		init: () => {
 			if (browser) {
 				// Apply initial theme to document
-				if (initialTheme === 'dark') {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
+				applyTheme(initialTheme);
 			}
 		}
 	};

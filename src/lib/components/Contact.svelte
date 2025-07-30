@@ -45,12 +45,12 @@
 	];
 </script>
 
-<section id="contact" class="py-20 bg-slate-900">
+<section id="contact" class="py-20 bg-slate-900 contact-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-16">
-			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Get In Touch</h2>
-			<div class="w-24 h-1 bg-purple-500 mx-auto mb-6"></div>
-			<p class="text-slate-300 text-lg max-w-2xl mx-auto">
+			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4 contact-title">Get In Touch</h2>
+			<div class="w-24 h-1 bg-purple-500 mx-auto mb-6 contact-divider"></div>
+			<p class="text-slate-300 text-lg max-w-2xl mx-auto contact-description">
 				I'm always interested in discussing new opportunities, collaborating on projects, 
 				or having a chat about technology and programming.
 			</p>
@@ -59,8 +59,8 @@
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 			<!-- Contact Info -->
 			<div>
-				<h3 class="text-2xl font-bold text-white mb-8">Let's Connect</h3>
-				<p class="text-slate-300 text-lg mb-8 leading-relaxed">
+				<h3 class="text-2xl font-bold text-white mb-8 contact-title">Let's Connect</h3>
+				<p class="text-slate-300 text-lg mb-8 leading-relaxed contact-description">
 					Whether you want to discuss technology, pitch a project, or simply say hello, 
 					I'd love to hear from you. Reach out through any of the channels below.
 				</p>
@@ -70,23 +70,23 @@
 						<a 
 							href={info.link}
 							target="_blank"
-							class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 group hover:scale-105 transform"
+							class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 group hover:scale-105 transform contact-info-item"
 						>
 							<div class="flex items-center">
 								<span class="text-3xl mr-4 group-hover:scale-110 transition-transform duration-300">
 									{info.icon}
 								</span>
 								<div>
-									<h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors duration-300">{info.title}</h4>
+									<h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors duration-300 contact-info-item">{info.title}</h4>
 								</div>
 							</div>
 						</a>
 					{/each}
 				</div>
 				
-				<div class="mt-8 p-6 bg-slate-800 rounded-lg">
-					<h4 class="text-white font-semibold mb-3">💡 Looking for</h4>
-					<ul class="text-slate-300 space-y-2">
+				<div class="mt-8 p-6 bg-slate-800 rounded-lg contact-form">
+					<h4 class="text-white font-semibold mb-3 contact-title">💡 Looking for</h4>
+					<ul class="text-slate-300 space-y-2 contact-description">
 						<li class="flex items-center">
 							<span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
 							Interesting backend/systems programming projects
@@ -105,54 +105,54 @@
 			
 			<!-- Contact Form -->
 			<div>
-				<h3 class="text-2xl font-bold text-white mb-8">Send a Message</h3>
+				<h3 class="text-2xl font-bold text-white mb-8 contact-title">Send a Message</h3>
 				
 				<form on:submit={handleSubmit} class="space-y-6">
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 						<div>
-							<label for="name" class="block text-slate-300 font-medium mb-2">Name</label>
+							<label for="name" class="block text-slate-300 font-medium mb-2 contact-label">Name</label>
 							<input
 								type="text"
 								id="name"
 								bind:value={formData.name}
 								required
-								class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+								class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 contact-input"
 								placeholder="Your Name"
 							/>
 						</div>
 						<div>
-							<label for="email" class="block text-slate-300 font-medium mb-2">Email</label>
+							<label for="email" class="block text-slate-300 font-medium mb-2 contact-label">Email</label>
 							<input
 								type="email"
 								id="email"
 								bind:value={formData.email}
 								required
-								class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+								class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 contact-input"
 								placeholder="your.email@example.com"
 							/>
 						</div>
 					</div>
 					
 					<div>
-						<label for="subject" class="block text-slate-300 font-medium mb-2">Subject</label>
+						<label for="subject" class="block text-slate-300 font-medium mb-2 contact-label">Subject</label>
 						<input
 							type="text"
 							id="subject"
 							bind:value={formData.subject}
 							required
-							class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+							class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 contact-input"
 							placeholder="What's this about?"
 						/>
 					</div>
 					
 					<div>
-						<label for="message" class="block text-slate-300 font-medium mb-2">Message</label>
+						<label for="message" class="block text-slate-300 font-medium mb-2 contact-label">Message</label>
 						<textarea
 							id="message"
 							bind:value={formData.message}
 							required
 							rows="5"
-							class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-vertical"
+							class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 resize-vertical contact-textarea"
 							placeholder="Tell me about your project or what you'd like to discuss..."
 						></textarea>
 					</div>
@@ -160,7 +160,7 @@
 					<button
 						type="submit"
 						disabled={isSubmitting}
-						class="w-full px-8 py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-purple-800 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center"
+						class="w-full px-8 py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-purple-800 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 disabled:scale-100 disabled:cursor-not-allowed flex items-center justify-center contact-button"
 					>
 						{#if isSubmitting}
 							<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

@@ -29,17 +29,17 @@
 	}
 </script>
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 transition-colors duration-300 w-full">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700 transition-colors duration-300 w-full nav-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="flex justify-between items-center py-4">
-			<div class="text-xl font-bold text-slate-900 dark:text-white transition-colors duration-300"></div>
+			<div class="text-xl font-bold text-slate-900 dark:text-white transition-colors duration-300 nav-text"></div>
 			
 			<!-- Desktop Menu -->
 			<div class="hidden lg:flex items-center space-x-8">
 				{#each menuItems as item}
 					<a 
 						href={item.href} 
-						class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+						class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all duration-200 nav-text"
 						on:click={(e) => handleNavClick(e, item.href)}
 					>
 						{item.name}
@@ -52,7 +52,7 @@
 			<div class="lg:hidden flex items-center space-x-4">
 				<ThemeToggle />
 				<button 
-					class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+					class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 nav-text"
 					on:click={() => isMenuOpen = !isMenuOpen}
 					aria-label="Toggle menu"
 				>
@@ -65,11 +65,11 @@
 		
 		<!-- Mobile Menu -->
 		{#if isMenuOpen}
-			<div class="lg:hidden pb-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
+			<div class="lg:hidden pb-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700 nav-bg">
 				{#each menuItems as item}
 					<a 
 						href={item.href} 
-						class="block py-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+						class="block py-2 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all duration-200 nav-text"
 						on:click={(e) => handleNavClick(e, item.href)}
 					>
 						{item.name}
