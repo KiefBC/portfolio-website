@@ -4,7 +4,6 @@
 	import About from '$lib/components/About.svelte';
 	import Projects from '$lib/components/Projects.svelte';
 	import GitHubStats from '$lib/components/GitHubStats.svelte';
-	import InteractiveTerminal from '$lib/components/InteractiveTerminal.svelte';
 	import TechTimeline from '$lib/components/TechTimeline.svelte';
 	import Resume from '$lib/components/Resume.svelte';
 	import Contact from '$lib/components/Contact.svelte';
@@ -51,7 +50,6 @@
 		<About />
 		<Projects />
 		<GitHubStats />
-		<InteractiveTerminal />
 		<TechTimeline />
 		<Resume />
 		<Contact />

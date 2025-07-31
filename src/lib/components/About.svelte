@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { scrollAnimationAction } from '$lib/utils/scrollAnimation';
+	import InteractiveTerminal from './InteractiveTerminal.svelte';
 	
 	interface Skill {
 		name: string;
@@ -21,10 +22,10 @@
 	
 	const interests = [
 		'Systems Programming',
-		'Game Development',
+		'Personal Skill Growth',
 		'Web Scraping & Automation',
 		'Personal Development Tools',
-		'Algorithm Implementation',
+		'Machine Learning',
 		'Cross-Platform Development'
 	];
 	
@@ -68,6 +69,12 @@
 					<span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Neovim, naturally.</span>
 				</p>
 			</div>
+		</div>
+		
+		<!-- Interactive Terminal -->
+		<div class="mb-12 lg:mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out delay-300"
+			 use:scrollAnimationAction={{ threshold: 0.2 }}>
+			<InteractiveTerminal />
 		</div>
 		
 		<!-- Skills Section -->

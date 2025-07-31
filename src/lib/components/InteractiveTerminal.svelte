@@ -109,20 +109,7 @@
 	});
 </script>
 
-<section class="py-16 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 terminal-bg">
-	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="text-center mb-12 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
-			 use:scrollAnimationAction={{ threshold: 0.2 }}>
-			<h2 class="text-3xl md:text-4xl font-bold text-white mb-4 terminal-title">Interactive Terminal</h2>
-			<div class="w-24 h-1 bg-green-500 mx-auto mb-4 projects-divider"></div>
-			<p class="text-slate-300 text-lg max-w-2xl mx-auto projects-description">
-				Step into my development workflow and see the tools I use daily
-			</p>
-		</div>
-
-		<div class="opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
-			 use:scrollAnimationAction={{ threshold: 0.3, once: true }}
-			 bind:this={terminalElement}>
+<div bind:this={terminalElement}>
 			
 			<!-- Terminal Window -->
 			<div class="bg-slate-800 rounded-lg shadow-2xl overflow-hidden border border-slate-600 terminal-window">
@@ -188,9 +175,7 @@
 					Restart Animation
 				</button>
 			</div>
-		</div>
-	</div>
-</section>
+</div>
 
 <style>
 	/* Custom scrollbar for terminal */
