@@ -109,7 +109,7 @@
 	});
 </script>
 
-<section class="py-16 bg-slate-900 dark:bg-slate-950 transition-colors duration-300 terminal-bg">
+<section class="py-16 bg-slate-50 dark:bg-slate-900 transition-colors duration-300 terminal-bg">
 	<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-12 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
 			 use:scrollAnimationAction={{ threshold: 0.2 }}>

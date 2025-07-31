@@ -43,7 +43,7 @@
 	<meta name="description" content="Portfolio of Kiefer, a passionate software developer specializing in Rust, Go, and systems programming. Explore my projects and experience." />
 </svelte:head>
 
-<div class="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-x-hidden">
+<div class="min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300 relative overflow-x-hidden site-bg">
 	<!-- Main Content -->
 	<div class="relative z-10">
 		<Navigation />

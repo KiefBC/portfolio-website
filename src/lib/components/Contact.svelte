@@ -45,7 +45,7 @@
 	];
 </script>
 
-<section id="contact" class="py-20 bg-slate-900 contact-bg">
+<section id="contact" class="py-20 bg-slate-100 dark:bg-slate-800 contact-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4 contact-title">Get In Touch</h2>
@@ -70,23 +70,23 @@
 						<a 
 							href={info.link}
 							target="_blank"
-							class="block p-6 bg-slate-800 rounded-lg hover:bg-slate-700 transition-all duration-300 group hover:scale-105 transform contact-info-item"
+							class="block p-6 bg-white dark:bg-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-600 transition-all duration-300 group hover:scale-105 transform contact-info-item"
 						>
 							<div class="flex items-center">
 								<span class="text-3xl mr-4 group-hover:scale-110 transition-transform duration-300">
 									{info.icon}
 								</span>
 								<div>
-									<h4 class="text-white font-semibold group-hover:text-purple-400 transition-colors duration-300 contact-info-item">{info.title}</h4>
+									<h4 class="text-slate-900 dark:text-white font-semibold group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300 contact-info-item">{info.title}</h4>
 								</div>
 							</div>
 						</a>
 					{/each}
 				</div>
 				
-				<div class="mt-8 p-6 bg-slate-800 rounded-lg contact-form">
-					<h4 class="text-white font-semibold mb-3 contact-title">💡 Looking for</h4>
-					<ul class="text-slate-300 space-y-2 contact-description">
+				<div class="mt-8 p-6 bg-white dark:bg-slate-700 rounded-lg contact-form">
+					<h4 class="text-slate-900 dark:text-white font-semibold mb-3 contact-title">💡 Looking for</h4>
+					<ul class="text-slate-700 dark:text-slate-300 space-y-2 contact-description">
 						<li class="flex items-center">
 							<span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
 							Interesting backend/systems programming projects

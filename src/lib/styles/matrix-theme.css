@@ -27,6 +27,10 @@
 
 /* Matrix Theme Styles */
 .matrix {
+  /* Site Background */
+  .site-bg {
+    background-color: var(--matrix-bg) !important;
+  }
   /* Navigation */
   .nav-bg {
     background-color: rgba(0, 0, 0, 0.95) !important;
@@ -109,7 +113,7 @@
 
   /* About Section */
   .about-bg {
-    background-color: var(--matrix-bg) !important;
+    background-color: var(--matrix-bg-secondary) !important;
   }
   
   .about-title {
@@ -273,7 +277,7 @@
 
   /* Resume Section */
   .resume-bg {
-    background-color: var(--matrix-bg-secondary) !important;
+    background-color: var(--matrix-bg) !important;
   }
   
   .resume-title {
@@ -340,7 +344,7 @@
 
   /* Contact Section */
   .contact-bg {
-    background-color: var(--matrix-bg) !important;
+    background-color: var(--matrix-bg-secondary) !important;
   }
   
   .contact-title {
@@ -360,6 +364,14 @@
     background-color: var(--matrix-bg-secondary) !important;
     border: 1px solid var(--matrix-border) !important;
     box-shadow: var(--matrix-shadow) !important;
+  }
+
+  .contact-form h4 {
+    color: var(--matrix-text-primary) !important;
+  }
+
+  .contact-form ul {
+    color: var(--matrix-text-tertiary) !important;
   }
   
   .contact-label {
@@ -402,16 +414,14 @@
     opacity: 0.5;
   }
   
-  .contact-info-item {
+  a.contact-info-item {
     background-color: var(--matrix-bg-secondary) !important;
     border: 1px solid var(--matrix-border) !important;
-    color: var(--matrix-text-tertiary) !important;
   }
   
-  .contact-info-item:hover {
+  a.contact-info-item:hover {
     background-color: var(--matrix-bg) !important;
     border-color: var(--matrix-border-hover) !important;
-    color: var(--matrix-text-primary) !important;
     box-shadow: var(--matrix-shadow) !important;
     filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.8));
   }

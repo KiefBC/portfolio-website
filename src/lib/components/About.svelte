@@ -41,7 +41,7 @@
 	}
 </script>
 
-<section id="about" class="py-16 lg:py-20 bg-slate-900 about-bg">
+<section id="about" class="py-16 lg:py-20 bg-slate-100 dark:bg-slate-800 transition-colors duration-300 about-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Header -->
 		<div class="text-center mb-12 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
@@ -53,7 +53,7 @@
 		<!-- Introduction Card -->
 		<div class="mb-12 lg:mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out delay-200"
 			 use:scrollAnimationAction={{ threshold: 0.2 }}>
-			<div class="bg-slate-800 rounded-xl p-6 lg:p-8 shadow-lg text-center max-w-4xl mx-auto about-card">
+			<div class="bg-white dark:bg-slate-700 rounded-xl p-6 lg:p-8 shadow-lg text-center max-w-4xl mx-auto about-card">
 				<h3 class="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6 about-card-title">Who I Am</h3>
 				<p class="text-slate-300 text-base lg:text-lg leading-relaxed mb-4 lg:mb-6 about-text">
 					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in systems programming 
@@ -83,10 +83,10 @@
 						on:keydown={(e) => handleKeydown(e, skill)}
 						aria-label="View details for {skill.name} skill"
 						aria-expanded={selectedSkill?.name === skill.name}
-						class="bg-slate-800 rounded-lg p-4 lg:p-5 text-left transition-all duration-300 
-						       hover:bg-slate-700 hover:scale-105 cursor-pointer
-						       focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-900
-						       skill-card {selectedSkill?.name === skill.name ? 'selected ring-2 ring-purple-500 bg-slate-700' : ''}"
+						class="bg-white dark:bg-slate-700 rounded-lg p-4 lg:p-5 text-left transition-all duration-300 
+						       hover:bg-slate-50 dark:hover:bg-slate-600 hover:scale-105 cursor-pointer
+						       focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-800
+						       skill-card {selectedSkill?.name === skill.name ? 'selected ring-2 ring-purple-500 bg-slate-50 dark:bg-slate-600' : ''}"
 					>
 						<div class="flex items-center justify-center mb-2 lg:mb-3">
 							<span class="text-2xl lg:text-3xl">{skill.icon}</span>
@@ -99,7 +99,7 @@
 			<!-- Skill Description -->
 			{#if selectedSkill}
 				<div 
-					class="bg-slate-800 rounded-lg p-4 lg:p-6 border-2 border-purple-500/30 shadow-lg
+					class="bg-white dark:bg-slate-700 rounded-lg p-4 lg:p-6 border-2 border-purple-500/30 shadow-lg
 					       animate-slide-in max-w-4xl mx-auto skill-details"
 					role="region"
 					aria-label="Skill details for {selectedSkill.name}"
@@ -130,8 +130,8 @@
 			<h3 class="text-2xl lg:text-3xl font-bold text-white mb-6 lg:mb-8 text-center about-section-title">What I'm Passionate About</h3>
 			<div class="flex flex-wrap gap-3 lg:gap-4 justify-center max-w-4xl mx-auto">
 				{#each interests as interest}
-					<span class="px-4 lg:px-6 py-2 lg:py-3 bg-slate-800 text-purple-300 rounded-full text-sm lg:text-base 
-					             hover:bg-slate-700 hover:text-purple-200 transition-all duration-300 interest-tag">
+					<span class="px-4 lg:px-6 py-2 lg:py-3 bg-slate-50 dark:bg-slate-600 text-purple-600 dark:text-purple-300 rounded-full text-sm lg:text-base 
+					             hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-purple-700 dark:hover:text-purple-200 transition-all duration-300 interest-tag">
 						{interest}
 					</span>
 				{/each}

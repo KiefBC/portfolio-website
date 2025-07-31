@@ -76,7 +76,7 @@
 	$: displayedProjects = showAll ? shuffledProjects : shuffledProjects.filter(p => p.featured);
 </script>
 
-<section id="projects" class="py-20 bg-slate-900 projects-bg">
+<section id="projects" class="py-20 bg-slate-50 dark:bg-slate-900 projects-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-16 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
 			 use:scrollAnimationAction={{ threshold: 0.2 }}>

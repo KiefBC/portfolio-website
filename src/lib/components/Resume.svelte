@@ -28,7 +28,7 @@
 	];
 </script>
 
-<section id="resume" class="py-20 bg-slate-800 resume-bg">
+<section id="resume" class="py-20 bg-slate-50 dark:bg-slate-900 resume-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<div class="text-center mb-16">
 			<h2 class="text-4xl md:text-5xl font-bold text-white mb-4 resume-title">Resume</h2>

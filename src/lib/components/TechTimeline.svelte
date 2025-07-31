@@ -202,7 +202,7 @@
 	}
 </script>
 
-<section class="py-8 bg-white dark:bg-slate-900 transition-colors duration-300 timeline-bg">
+<section class="py-8 bg-slate-100 dark:bg-slate-800 transition-colors duration-300 timeline-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Header -->
 		<div class="text-center mb-6 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
