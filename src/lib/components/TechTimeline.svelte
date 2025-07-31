@@ -139,7 +139,7 @@
 			color: 'bg-gray-500'
 		},
 		{
-			year: '2024-2025',
+			year: '2024',
 			title: 'Professional Experience',
 			description: 'Applied skills in a professional setting at Racerocks 3D, working on military LMS systems and gaining real-world development experience.',
 			technologies: ['Full-stack Development', 'Professional Workflow', 'Team Collaboration'],

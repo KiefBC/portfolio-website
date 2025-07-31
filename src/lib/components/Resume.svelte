@@ -15,13 +15,13 @@
 		{
 			title: "Student Intern",
 			company: "Racerocks 3D (Remote)",
-			period: "2023 - 2025",
+			period: "2024",
 			description: "Worked remotely in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training future military personnel.",
 			achievements: [
 				"Developed full-stack components for military LMS platform using backend and frontend technologies",
-				"Built and maintained RESTful APIs for the training management system",
 				"Gained comprehensive experience across the entire software development lifecycle",
-				"Successfully collaborated with distributed teams across multiple time zones on defence training solutions"
+				"Successfully collaborated with distributed teams across multiple time zones on defence training solutions",
+				"Adapted effectively to remote work environment and developed strong virtual communication skills"
 			]
 		}
 	];
@@ -128,16 +128,15 @@
 				
 				<!-- Download Resume -->
 				<div class="text-center">
-					<a 
-						href="/resume.pdf" 
-						download
-						class="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 resume-download-button"
+					<button 
+						disabled
+						class="inline-flex items-center px-6 py-3 bg-gray-500 text-gray-300 font-semibold rounded-lg cursor-not-allowed resume-download-button"
 					>
 						<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
 						</svg>
 						Download Resume
-					</a>
+					</button>
 				</div>
 			</div>
 		</div>
