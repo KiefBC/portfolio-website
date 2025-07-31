@@ -161,6 +161,7 @@
 	let selectedCategory: string | null = null;
 	let hoveredItem: TimelineItem | null = null;
 	let showAllItems = false;
+	let justExpanded = false;
 
 	// Show only the most recent/important items by default
 	$: featuredItems = timelineItems.slice(0, 6); // Show first 6 items
@@ -174,9 +175,28 @@
 	function selectCategory(category: string) {
 		selectedCategory = selectedCategory === category ? null : category;
 		showAllItems = false; // Reset to condensed view when filtering
+		justExpanded = false;
 	}
 
 	function toggleShowAll() {
+		if (!showAllItems) {
+			justExpanded = true;
+			// Reset animation flag after animation completes
+			setTimeout(() => {
+				justExpanded = false;
+			}, 800);
+		} else {
+			// When collapsing, scroll smoothly to the Journey section title
+			setTimeout(() => {
+				const title = document.querySelector('.timeline-title');
+				if (title) {
+					title.scrollIntoView({ 
+						behavior: 'smooth', 
+						block: 'center'
+					});
+				}
+			}, 150); // Slightly longer delay to ensure DOM update
+		}
 		showAllItems = !showAllItems;
 		selectedCategory = null; // Clear any category filter
 	}
@@ -205,8 +225,7 @@
 <section class="py-8 bg-slate-100 dark:bg-slate-800 transition-colors duration-300 timeline-bg">
 	<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 		<!-- Header -->
-		<div class="text-center mb-6 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
-			 use:scrollAnimationAction={{ threshold: 0.2 }}>
+		<div class="text-center mb-6">
 			<h2 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2 timeline-title">Learning Journey</h2>
 			<div class="w-12 h-0.5 bg-purple-500 mx-auto mb-3 projects-divider"></div>
 			<p class="text-slate-600 dark:text-slate-300 text-sm max-w-md mx-auto projects-description">
@@ -215,8 +234,7 @@
 		</div>
 
 		<!-- Category Filter -->
-		<div class="mb-6 opacity-0 translate-y-4 transition-all duration-700 ease-out delay-200 animate-out"
-			 use:scrollAnimationAction={{ threshold: 0.3 }}>
+		<div class="mb-6">
 			<div class="flex flex-wrap justify-center gap-3">
 				<button
 					on:click={() => selectedCategory = null}
@@ -254,11 +272,12 @@
 			<div class="space-y-6">
 				{#each filteredItems as item, index}
 					<div 
-						class="relative flex items-center opacity-0 translate-y-8 animate-out {
+						class="relative flex items-center {
 							index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+						} {
+							index >= featuredItems.length && justExpanded ? 'animate-slide-up' : ''
 						}"
-						use:scrollAnimationAction={{ threshold: 0.3 }}
-						style="transition-delay: {index * 150}ms"
+						style={index >= featuredItems.length && justExpanded ? `animation-delay: ${(index - featuredItems.length) * 100}ms` : ''}
 						on:mouseenter={() => hoveredItem = item}
 						on:mouseleave={() => hoveredItem = null}
 						role="presentation"
@@ -268,7 +287,7 @@
 
 						<!-- Content Card -->
 						<div class="ml-12 md:ml-0 md:w-5/12 {index % 2 === 0 ? 'md:pr-4' : 'md:pl-4'}">
-							<div class="bg-slate-50 dark:bg-slate-800 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 border-l-2 {item.color.replace('bg-', 'border-')} timeline-item">
+							<div class="bg-white dark:bg-slate-700 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 border-l-2 {item.color.replace('bg-', 'border-')} timeline-item">
 								<!-- Year Badge -->
 								<div class="flex items-center justify-between mb-3">
 									<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium {item.color} text-white">
@@ -290,21 +309,12 @@
 								<!-- Technologies -->
 								<div class="flex flex-wrap gap-2">
 									{#each item.technologies as tech}
-										<span class="px-2 py-1 bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs rounded-full border border-slate-200 dark:border-slate-600">
+										<span class="px-2 py-1 bg-slate-50 dark:bg-slate-600 text-slate-600 dark:text-slate-300 text-xs rounded-full border border-slate-200 dark:border-slate-600">
 											{tech}
 										</span>
 									{/each}
 								</div>
 
-								<!-- Hover Effect -->
-								{#if hoveredItem === item}
-									<div class="mt-4 pt-4 border-t border-slate-200 dark:border-slate-600 transition-all duration-300">
-										<div class="flex items-center text-purple-600 dark:text-purple-400 text-sm font-medium">
-											<span class="w-2 h-2 bg-purple-500 rounded-full mr-2 animate-pulse"></span>
-											Active Learning Phase
-										</div>
-									</div>
-								{/if}
 							</div>
 						</div>
 					</div>
@@ -314,8 +324,7 @@
 
 		<!-- Expand/Collapse Button -->
 		{#if !selectedCategory}
-			<div class="text-center mt-6 opacity-0 translate-y-4 transition-all duration-700 ease-out animate-out"
-				 use:scrollAnimationAction={{ threshold: 0.3 }}>
+			<div class="text-center mt-6">
 				<button 
 					on:click={toggleShowAll}
 					class="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-all duration-300 transform hover:scale-105 shadow-sm timeline-expand-button"
@@ -327,8 +336,7 @@
 
 		<!-- Stats Summary - Only show when all items are visible -->
 		{#if showAllItems || selectedCategory}
-			<div class="mt-8 opacity-0 translate-y-8 transition-all duration-700 ease-out animate-out"
-				 use:scrollAnimationAction={{ threshold: 0.3 }}>
+			<div class="mt-8">
 				<div class="bg-gradient-to-r from-purple-500 to-blue-600 rounded-lg p-4 text-white timeline-stats">
 					<div class="text-center mb-4">
 						<h3 class="text-lg font-bold mb-1 timeline-stats-title">Journey Statistics</h3>
@@ -367,6 +375,21 @@
 	@media (prefers-color-scheme: dark) {
 		.group:hover .dark\:group-hover\:text-purple-400 {
 			color: rgb(196 181 253);
+		}
+	}
+
+	.animate-slide-up {
+		animation: slide-up 0.5s ease-out forwards;
+	}
+
+	@keyframes slide-up {
+		from {
+			opacity: 0;
+			transform: translateY(32px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 </style>

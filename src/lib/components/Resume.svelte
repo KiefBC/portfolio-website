@@ -1,6 +1,18 @@
 <script lang="ts">
 	const experience = [
 		{
+			title: "ML Software Developer",
+			company: "Swallow AI",
+			period: "2025",
+			description: "Developed a full-stack agricultural pest identification system using SvelteKit SSR with TypeScript frontend and Flask API backend. Built machine learning solutions with ResNet50 deep learning technology to help farmers identify insect species and receive pesticide recommendations for effective crop management.",
+			achievements: [
+				"Built SvelteKit SSR frontend with TypeScript and Flask REST API backend",
+				"Integrated ResNet50 ML model for accurate insect classification from uploaded images",
+				"Implemented dual pesticide recommendation system with chemical and eco-friendly options",
+				"Developed comprehensive testing suite including unit, API, and end-to-end tests"
+			]
+		},
+		{
 			title: "Student Intern",
 			company: "Racerocks 3D (Remote)",
 			period: "2023 - 2025",
