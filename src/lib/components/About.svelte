@@ -15,7 +15,8 @@
 		{ name: 'Go', icon: '🐹', level: 85, description: 'Backend services, concurrent programming, and microservices architecture. Developed efficient server applications and REST APIs with focus on performance.' },
 		{ name: 'Linux', icon: '🐧', level: 85, description: 'System administration and dotfiles management. Comfortable with shell scripting, system configuration, and command-line workflows for development environments.' },
 		{ name: 'Python', icon: '🐍', level: 80, description: 'Created Asteroids game with PyGame, built Acuendo SSG with Jinja2 templating, weather apps, todo generators, maze solvers, and financial calculators. Expert in automation and game development.' },
-		{ name: 'Docker', icon: '🐳', level: 75, description: 'Containerization for development environments and deployment workflows. Experience with multi-stage builds and container orchestration for Rust and Python applications.' }
+		{ name: 'Docker', icon: '🐳', level: 75, description: 'Containerization for development environments and deployment workflows. Experience with multi-stage builds and container orchestration for Rust and Python applications.' },
+		{ name: 'Swift', icon: '🍎', level: 70, description: 'Built iOS, MacOS and WatchOS Apps' }
 	];
 	
 	const interests = [
@@ -57,8 +58,8 @@
 				<h3 class="text-xl lg:text-2xl font-bold text-white mb-4 lg:mb-6 about-card-title">Who I Am</h3>
 				<p class="text-slate-300 text-base lg:text-lg leading-relaxed mb-4 lg:mb-6 about-text">
 					I'm a passionate developer from British Columbia, Canada 🌲, with a deep interest in systems programming 
-					and algorithm implementation. My programming journey spans multiple languages including Rust, Swift, 
-					C, and Go, with a particular love for building efficient, performance-focused applications.
+					and algorithm implementation. My programming journey spans multiple languages including Python, Rust, Swift and 
+					Go, with a particular love for building efficient, performance-focused applications.
 				</p>
 				<p class="text-slate-300 text-base lg:text-lg leading-relaxed about-text">
 					I work with modern frameworks like Svelte, Leptos, and Tauri, and my projects range from classic game 
