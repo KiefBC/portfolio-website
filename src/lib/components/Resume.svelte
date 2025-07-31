@@ -3,7 +3,7 @@
 		{
 			title: "ML Software Developer",
 			company: "Swallow AI (Remote)",
-			period: "2025 (Temp)",
+			period: "Temporary",
 			description: "Developed a full-stack agricultural pest identification system using SvelteKit SSR with TypeScript frontend and Flask API backend. Built machine learning solutions with ResNet50 deep learning technology to help farmers identify insect species and receive pesticide recommendations for effective crop management.",
 			achievements: [
 				"Built SvelteKit SSR frontend with TypeScript and Flask REST API backend",
@@ -15,7 +15,7 @@
 		{
 			title: "Student Intern",
 			company: "Racerocks 3D (Remote)",
-			period: "2024",
+			period: "",
 			description: "Worked remotely in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training future military personnel.",
 			achievements: [
 				"Developed full-stack components for military LMS platform using backend and frontend technologies",
