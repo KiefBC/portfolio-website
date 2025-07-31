@@ -368,16 +368,6 @@
 </section>
 
 <style>
-	.group:hover .group-hover\:text-purple-600 {
-		color: rgb(147 51 234);
-	}
-	
-	@media (prefers-color-scheme: dark) {
-		.group:hover .dark\:group-hover\:text-purple-400 {
-			color: rgb(196 181 253);
-		}
-	}
-
 	.animate-slide-up {
 		animation: slide-up 0.5s ease-out forwards;
 	}
