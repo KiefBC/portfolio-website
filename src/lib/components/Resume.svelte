@@ -2,8 +2,8 @@
 	const experience = [
 		{
 			title: "ML Software Developer",
-			company: "Swallow AI",
-			period: "2025",
+			company: "Swallow AI (Remote)",
+			period: "2025 (Temp)",
 			description: "Developed a full-stack agricultural pest identification system using SvelteKit SSR with TypeScript frontend and Flask API backend. Built machine learning solutions with ResNet50 deep learning technology to help farmers identify insect species and receive pesticide recommendations for effective crop management.",
 			achievements: [
 				"Built SvelteKit SSR frontend with TypeScript and Flask REST API backend",
