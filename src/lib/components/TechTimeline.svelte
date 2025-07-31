@@ -287,7 +287,7 @@
 
 						<!-- Content Card -->
 						<div class="ml-12 md:ml-0 md:w-5/12 {index % 2 === 0 ? 'md:pr-4' : 'md:pl-4'}">
-							<div class="bg-white dark:bg-slate-700 rounded-lg p-3 shadow-sm hover:shadow-md transition-all duration-300 border-l-2 {item.color.replace('bg-', 'border-')} timeline-item">
+							<div class="bg-white dark:bg-slate-700 rounded-lg p-3 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 timeline-item" style="border-left-color: {item.color.includes('green') ? '#10b981' : item.color.includes('yellow') ? '#f59e0b' : item.color.includes('red') ? '#ef4444' : item.color.includes('blue') ? '#3b82f6' : item.color.includes('purple') ? '#8b5cf6' : item.color.includes('orange') ? '#f97316' : item.color.includes('indigo') ? '#6366f1' : item.color.includes('cyan') ? '#06b6d4' : item.color.includes('pink') ? '#ec4899' : item.color.includes('gray') ? '#6b7280' : item.color.includes('emerald') ? '#10b981' : '#8b5cf6'}">
 								<!-- Year Badge -->
 								<div class="flex items-center justify-between mb-3">
 									<span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium {item.color} text-white">
