@@ -3,7 +3,8 @@
 	import { scrollAnimationAction } from '$lib/utils/scrollAnimation';
 	import { projects } from '$lib/data/projects';
 	import ProjectCard from './ProjectCard.svelte';
-	import type { Project } from '$lib/types/project';
+	import ProjectFilter from './ProjectFilter.svelte';
+	import type { Project } from './types/project';
 	
 	// Shuffle function using Fisher-Yates algorithm
 	function shuffleArray<T>(array: T[]): T[] {
@@ -15,8 +16,8 @@
 		return shuffled;
 	}
 	
-	
 	let shuffledProjects: Project[] = projects;
+	let displayedProjects: Project[] = [];
 	let showAll = false;
 	
 	// Shuffle projects on component mount
@@ -24,7 +25,13 @@
 		shuffledProjects = shuffleArray(projects);
 	});
 	
-	$: displayedProjects = showAll ? shuffledProjects : shuffledProjects.filter(p => p.featured);
+	function handleFilteredProjects(event: CustomEvent<{ projects: Project[] }>) {
+		displayedProjects = event.detail.projects;
+	}
+	
+	function handleToggle(event: CustomEvent<{ showAll: boolean }>) {
+		showAll = event.detail.showAll;
+	}
 </script>
 
 <section id="projects" class="py-20 bg-slate-50 dark:bg-slate-900 projects-bg">
@@ -45,13 +52,11 @@
 			{/each}
 		</div>
 		
-		<div class="text-center">
-			<button 
-				on:click={() => showAll = !showAll}
-				class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 projects-button"
-			>
-				{showAll ? 'Show Less' : 'View All Projects'}
-			</button>
-		</div>
+		<ProjectFilter 
+			projects={shuffledProjects} 
+			{showAll}
+			on:filtered={handleFilteredProjects}
+			on:toggle={handleToggle}
+		/>
 	</div>
 </section>

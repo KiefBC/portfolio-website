@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Navigation from '$lib/components/Navigation.svelte';
+	import Navigation from '$lib/components/navigation/Navigation.svelte';
 	import Hero from '$lib/components/Hero.svelte';
-	import About from '$lib/components/About.svelte';
-	import Projects from '$lib/components/Projects.svelte';
+	import About from '$lib/components/about/About.svelte';
+	import Projects from '$lib/components/projects/Projects.svelte';
 	import GitHubStats from '$lib/components/GitHubStats.svelte';
-	import TechTimeline from '$lib/components/TechTimeline.svelte';
-	import Resume from '$lib/components/Resume.svelte';
+	import TechTimeline from '$lib/components/timeline/TechTimeline.svelte';
+	import Resume from '$lib/components/resume/Resume.svelte';
 	import Contact from '$lib/components/Contact.svelte';
-	import CommandPalette from '$lib/components/CommandPalette.svelte';
+	import CommandPalette from '$lib/components/navigation/CommandPalette.svelte';
 	
 	import { onMount } from 'svelte';
 	import { initializePWA } from '$lib/utils/pwa';

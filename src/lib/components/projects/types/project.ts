@@ -7,6 +7,8 @@ export interface Project {
 	previewUrl: string | null;
 	image: string;
 	featured: boolean;
+	githubSubtext?: string;
+	previewSubtext?: string;
 }
 
 export type ProjectLinkType = 'github' | 'preview' | 'private';

@@ -1,15 +1,16 @@
-import type { Project } from '$lib/types/project';
+import type { Project } from '$lib/components/projects/types/project';
 
 export const projects: Project[] = [
 	{
 		id: 1,
 		title: "Swallow AI - Pest Identification System",
-		description: "Flask-based machine learning application that identifies insects from uploaded images using ResNet50 deep learning technology. Designed for agricultural professionals to quickly identify insect species and receive appropriate pesticide recommendations for effective pest management.",
+		description: "Flask-based machine learning application that identifies insects from uploaded images using ResNet50 deep learning technology. Designed for agricultural professionals to quickly identify insect species and receive appropriate pesticide recommendations for effective crop management.",
 		technologies: ["Python", "Flask", "ResNet50", "Machine Learning", "Docker", "Swagger API", "Computer Vision"],
 		github: null,
-		previewUrl: null,
+		previewUrl: "https://bright-tartufo-3f0dbc.netlify.app",
 		image: "🌾",
-		featured: true
+		featured: true,
+		previewSubtext: "Frontend Only"
 	},
 	{
 		id: 2,
@@ -39,7 +40,8 @@ export const projects: Project[] = [
 		github: "https://github.com/KiefBC/Acuendo-SSG",
 		previewUrl: "http://kiefx.tech/Acuendo-SSG/",
 		image: "📝",
-		featured: false
+		featured: false,
+		previewSubtext: "Functioning Website"
 	},
 	{
 		id: 5,

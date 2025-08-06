@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { ProjectLinkType } from '$lib/types/project';
+	import type { ProjectLinkType } from './types/project';
 
 	export let type: ProjectLinkType;
 	export let url: string | null = null;
 	export let className: string = '';
+	export let subtext: string | undefined = undefined;
 
 	const linkConfigs = {
 		github: {
@@ -31,33 +32,47 @@
 </script>
 
 {#if hasUrl}
-	<a 
-		href={url} 
-		target="_blank"
-		class="flex items-center {config.colorClasses} transition-all duration-200 project-link {className}"
-	>
-		{#if config.iconType === 'fill'}
+	<div class="flex flex-col">
+		<a 
+			href={url} 
+			target="_blank"
+			class="flex items-center {config.colorClasses} transition-all duration-200 project-link {className}"
+		>
+			{#if config.iconType === 'fill'}
+				<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+					<path d={config.icon}></path>
+				</svg>
+			{:else}
+				<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					{#each config.icon.split(' M') as pathData, i}
+						{#if i === 0}
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pathData}></path>
+						{:else}
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M{pathData}"></path>
+						{/if}
+					{/each}
+				</svg>
+			{/if}
+			{config.text}
+		</a>
+		{#if subtext}
+			<span class="text-xs text-slate-500 dark:text-slate-400 mt-1 ml-7 opacity-75">
+				{subtext}
+			</span>
+		{/if}
+	</div>
+{:else if type === 'private'}
+	<div class="flex flex-col">
+		<span class="flex items-center {config.colorClasses} project-private {className}">
 			<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
 				<path d={config.icon}></path>
 			</svg>
-		{:else}
-			<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-				{#each config.icon.split(' M') as pathData, i}
-					{#if i === 0}
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={pathData}></path>
-					{:else}
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M{pathData}"></path>
-					{/if}
-				{/each}
-			</svg>
+			{config.text}
+		</span>
+		{#if subtext}
+			<span class="text-xs text-slate-500 dark:text-slate-400 mt-1 ml-7 opacity-75">
+				{subtext}
+			</span>
 		{/if}
-		{config.text}
-	</a>
-{:else if type === 'private'}
-	<span class="flex items-center {config.colorClasses} project-private {className}">
-		<svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-			<path d={config.icon}></path>
-		</svg>
-		{config.text}
-	</span>
+	</div>
 {/if}

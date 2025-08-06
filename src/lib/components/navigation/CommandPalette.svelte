@@ -1,15 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { createEventDispatcher } from 'svelte';
-
-	interface Command {
-		id: string;
-		label: string;
-		description: string;
-		action: () => void;
-		shortcut?: string;
-		icon?: string;
-	}
+	import { commands } from './data/commands';
+	import type { Command } from './types/command';
 
 	let isOpen = false;
 	let searchQuery = '';
@@ -18,68 +11,13 @@
 	
 	const dispatch = createEventDispatcher();
 
-	const commands: Command[] = [
-		{
-			id: 'home',
-			label: 'Go to Home',
-			description: 'Navigate to the hero section',
-			action: () => scrollTo('home'),
-			icon: '🏠'
-		},
-		{
-			id: 'about',
-			label: 'Go to About',
-			description: 'Learn more about me',
-			action: () => scrollTo('about'),
-			icon: '👨‍💻'
-		},
-		{
-			id: 'projects',
-			label: 'View Projects',
-			description: 'Explore my portfolio projects',
-			action: () => scrollTo('projects'),
-			icon: '🚀'
-		},
-		{
-			id: 'resume',
-			label: 'View Resume',
-			description: 'Check out my experience',
-			action: () => scrollTo('resume'),
-			icon: '📄'
-		},
-		{
-			id: 'contact',
-			label: 'Contact Me',
-			description: 'Get in touch',
-			action: () => scrollTo('contact'),
-			icon: '📧'
-		},
-		{
-			id: 'github',
-			label: 'Visit GitHub',
-			description: 'Check out my repositories',
-			action: () => window.open('https://github.com/KiefBC', '_blank'),
-			icon: '🐙'
-		},
-		{
-			id: 'linkedin',
-			label: 'Visit LinkedIn',
-			description: 'Connect with me professionally',
-			action: () => window.open('https://www.linkedin.com/in/kieferh/', '_blank'),
-			icon: '💼'
-		}
-	];
-
 	$: filteredCommands = commands.filter(command =>
 		command.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
 		command.description.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 
-	function scrollTo(elementId: string) {
-		const element = document.getElementById(elementId);
-		if (element) {
-			element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-		}
+	function executeCommand(command: Command) {
+		command.action();
 		closeModal();
 	}
 
@@ -120,7 +58,7 @@
 			case 'Enter':
 				event.preventDefault();
 				if (filteredCommands[selectedIndex]) {
-					filteredCommands[selectedIndex].action();
+					executeCommand(filteredCommands[selectedIndex]);
 				}
 				break;
 		}
@@ -219,7 +157,7 @@
 								class="w-full px-4 py-3 flex items-center space-x-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors duration-150 text-left {
 									index === selectedIndex ? 'bg-purple-50 dark:bg-purple-900/20 border-r-2 border-purple-500' : ''
 								}"
-								on:click={command.action}
+								on:click={() => executeCommand(command)}
 								role="option"
 								aria-selected={index === selectedIndex}
 								aria-label="{command.label} - {command.description}"

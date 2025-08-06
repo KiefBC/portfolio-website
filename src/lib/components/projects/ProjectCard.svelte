@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Project } from '$lib/types/project';
+	import type { Project } from './types/project';
 	import ProjectLink from './ProjectLink.svelte';
 
 	export let project: Project;
@@ -26,17 +26,17 @@
 				{/each}
 			</div>
 			
-			<div class="flex justify-between items-center">
+			<div class="flex gap-4 items-start">
 				<div class="flex-shrink-0">
 					{#if project.github}
-						<ProjectLink type="github" url={project.github} />
+						<ProjectLink type="github" url={project.github} subtext={project.githubSubtext} />
 					{:else}
-						<ProjectLink type="private" />
+						<ProjectLink type="private" subtext={project.githubSubtext} />
 					{/if}
 				</div>
 				<div class="flex-shrink-0">
 					{#if project.previewUrl}
-						<ProjectLink type="preview" url={project.previewUrl} />
+						<ProjectLink type="preview" url={project.previewUrl} subtext={project.previewSubtext} />
 					{/if}
 				</div>
 			</div>
