@@ -13,12 +13,26 @@
 		event.preventDefault();
 		isSubmitting = true;
 		
-		// Simulate form submission (replace with actual endpoint)
 		try {
-			await new Promise(resolve => setTimeout(resolve, 1000));
-			submitStatus = 'success';
-			formData = { name: '', email: '', subject: '', message: '' };
+			const response = await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+
+			const result = await response.json();
+
+			if (response.ok) {
+				submitStatus = 'success';
+				formData = { name: '', email: '', subject: '', message: '' };
+			} else {
+				console.error('Form submission error:', result.error);
+				submitStatus = 'error';
+			}
 		} catch (error) {
+			console.error('Network error:', error);
 			submitStatus = 'error';
 		} finally {
 			isSubmitting = false;
