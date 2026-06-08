@@ -24,6 +24,9 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
+		"@fontsource/fira-code": "^5.2.7",
+		"@fontsource/space-grotesk": "^5.2.10",
+		"@lucide/svelte": "^1.17.0",
 		"@vercel/analytics": "^1.5.0",
 		"@vercel/speed-insights": "^1.2.0"
 	},

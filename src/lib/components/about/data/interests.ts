@@ -1,10 +1,12 @@
 import type { Interest } from '../types/about';
 
 export const interests: Interest[] = [
+	'DevOps & CI/CD',
+	'Backend Development',
 	'Systems Programming',
-	'Personal Skill Growth',
-	'Web Scraping & Automation',
-	'Personal Development Tools',
-	'Machine Learning',
-	'Cross-Platform Development'
+	'CLI Tooling',
+	'Self-Hosting & Infrastructure',
+	'Game Development',
+	'Exploring New Tech',
+	'Machine Learning'
 ];

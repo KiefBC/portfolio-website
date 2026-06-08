@@ -2,27 +2,39 @@ import type { Experience } from '../types/resume';
 
 export const experience: Experience[] = [
 	{
-		title: "Machine Learning Software Developer",
-		company: "Swallow AI (Remote)",
-		period: "Capstone",
-		description: "Developed a full-stack agricultural pest identification system using SvelteKit SSR with TypeScript frontend and Flask API backend. Built machine learning solutions with ResNet50 deep learning technology to help farmers identify insect species and receive pesticide recommendations for effective crop management.",
+		title: "DevOps Engineer",
+		company: "Sandbenders",
+		period: "Jan 2026 – Present",
+		description: "Building CI/CD infrastructure for reproducible embedded software builds — turning manual, fragile build steps into containerized, repeatable automation.",
 		achievements: [
-			"Built SvelteKit SSR frontend with TypeScript and Flask REST API backend",
-			"Integrated ResNet50 ML model for accurate insect classification from uploaded images",
-			"Implemented dual pesticide recommendation system with chemical and eco-friendly options",
-			"Developed comprehensive testing suite including unit, API, and end-to-end tests"
+			"Built Dagger-based CI/CD workflows for reproducible embedded builds across Yocto, Bazel, and Lingua Franca",
+			"Automated containerized build environments, dependency setup, artifact packaging, and publishing",
+			"Debugged Linux/Docker build failures and improved pipeline reliability through caching, isolation, and repeatable execution",
+			"Collaborated with engineering stakeholders to convert manual build requirements into maintainable CI workflows"
 		]
 	},
 	{
-		title: "Student Intern Software Developer",
-		company: "Racerocks 3D (Remote)",
-		period: "",
-		description: "Worked remotely in the R&D Department at an Indigenous women-led technology company partnering with the Canadian Defence sector. Contributed to the development of a Learning Management System (LMS) designed for training.",
+		title: "Machine Learning Developer",
+		company: "Swallow AI",
+		period: "Apr 2025 – Sep 2025",
+		description: "Built a Python-based machine learning application for pest identification, supporting agricultural use cases across multiple African biomes.",
 		achievements: [
-			"Developed full-stack components for a LMS platform using backend and frontend technologies",
-			"Gained comprehensive experience across the entire software development lifecycle",
-			"Successfully collaborated with distributed teams across multiple time zones on defence training solutions",
-			"Adapted effectively to remote work environment and developed strong virtual communication skills"
+			"Led a team of 4 developers to deliver the MVP 3 weeks ahead of schedule",
+			"Optimized the ML pipeline, improving accuracy from 72% to 87% and reducing inference time by 40%",
+			"Collaborated with product, marketing, and sales teams to align technical solutions with regional and environmental requirements",
+			"Diagnosed and resolved production issues through systematic debugging and root-cause analysis"
+		]
+	},
+	{
+		title: "R&D Intern",
+		company: "RaceRocks",
+		period: "Apr 2024 – Aug 2024",
+		description: "Developed and maintained Ruby on Rails applications within a large, production codebase as a student intern in the R&D department.",
+		achievements: [
+			"Developed and maintained Ruby on Rails applications within a large, production codebase",
+			"Contributed features and fixes through Agile workflows — sprint planning, stand-ups, and retrospectives",
+			"Integrated new functionality while refactoring and improving existing systems",
+			"Collaborated with R&D and cross-functional teams to resolve complex technical issues"
 		]
 	}
 ];
