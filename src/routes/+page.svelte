@@ -9,9 +9,10 @@
 	import { openTerminal } from '$lib/aurum/stores/terminal';
 	import { Mail, Command } from '@lucide/svelte';
 	import GithubIcon from '$lib/aurum/components/icons/GithubIcon.svelte';
+	import LinkedinIcon from '$lib/aurum/components/icons/LinkedinIcon.svelte';
 	import PremiumCard from '$lib/aurum/components/PremiumCard.svelte';
 	import SectionHeading from '$lib/aurum/components/SectionHeading.svelte';
-	import KineticRibbon from '$lib/aurum/components/KineticRibbon.svelte';
+	import SkillStack from '$lib/aurum/components/SkillStack.svelte';
 	import LiquidGauge from '$lib/aurum/components/LiquidGauge.svelte';
 	import CryptoText from '$lib/aurum/components/CryptoText.svelte';
 	import { magneticDrag } from '$lib/aurum/actions/magneticDrag';
@@ -126,6 +127,9 @@
 					<a class="btn primary" href="https://github.com/KiefBC" target="_blank" rel="noreferrer" data-cursor="hover">
 						<GithubIcon size={17} /> GitHub
 					</a>
+					<a class="btn" href="https://www.linkedin.com/in/kieferh/" target="_blank" rel="noreferrer" data-cursor="hover">
+						<LinkedinIcon size={17} /> LinkedIn
+					</a>
 					<a class="btn" href="/contact" data-cursor="hover">
 						<Mail size={17} strokeWidth={1.8} /> Get in touch
 					</a>
@@ -140,7 +144,9 @@
 		</div>
 	</section>
 
-	<KineticRibbon items={ribbonItems} />
+	<div class="stack-block">
+		<SkillStack items={ribbonItems} />
+	</div>
 
 	<!-- ===== IDENTITY & EDUCATION ===== -->
 	<section class="section">
@@ -282,6 +288,9 @@
 	}
 	.section {
 		margin-top: 5rem;
+	}
+	.stack-block {
+		margin-top: 2.75rem;
 	}
 
 	/* hero */

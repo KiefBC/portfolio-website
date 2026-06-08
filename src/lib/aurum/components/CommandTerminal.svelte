@@ -9,8 +9,11 @@
 	import { systemLog } from '$lib/aurum/stores/systemLog';
 
 	const GITHUB = 'https://github.com/KiefBC';
-	const LINKEDIN = 'https://www.linkedin.com/';
+	const LINKEDIN = 'https://www.linkedin.com/in/kieferh/';
 	const bootTime = Date.now();
+
+	// Clickable starter commands shown in the always-visible hint bar.
+	const QUICK = ['help', 'whoami', 'ls --projects', 'goto arsenal', 'sudo view --xray'];
 
 	interface Line {
 		kind: 'in' | 'out' | 'err';
@@ -18,7 +21,8 @@
 	}
 
 	let history = $state<Line[]>([
-		{ kind: 'out', text: "aurum shell — type 'help' for commands." }
+		{ kind: 'out', text: 'aurum shell v1.0 — interactive résumé.' },
+		{ kind: 'out', text: "type 'help', or tap a command below ↓" }
 	]);
 	let input = $state('');
 	let inputEl = $state<HTMLInputElement>();
@@ -55,21 +59,35 @@
 				HELP.forEach((l) => print(l));
 				break;
 			case 'whoami':
-				print('Kiefer — Software Developer (Rust · Go · Systems).');
+				print('Kiefer — Backend & DevOps Developer (Go · Rust · CI/CD).');
 				break;
 			case 'skills':
-				print('Rust · Go · TypeScript · Python · Swift · Docker · Linux · Git');
+				print('Rust · Go · C++ · TypeScript · Python · Swift');
+				print('Docker · Dagger · PostgreSQL · Linux · Git · Svelte');
 				break;
 			case 'ls':
 				if (arg.includes('project')) {
-					['Swallow AI', 'Asteroids (Rust/Bevy)', 'WWE Universe Manager', 'Acuendo SSG', 'Maze Solver', 'Rust Shell'].forEach(
-						(p) => print(`  • ${p}`)
-					);
+					[
+						'WWE Universe Manager',
+						'HTTP/1.1 Server (Rust)',
+						'Seiten — Plex anime manager',
+						'Swallow AI — pest ID',
+						'Amministratore Delegato (s&box)',
+						'The Bevy Book',
+						'Pokédex CLI (Go)',
+						'Asteroids (Rust/Bevy)',
+						'Rust Shell',
+						'Acuendo SSG',
+						'Maze Solver'
+					].forEach((p) => print(`  • ${p}`));
 				} else print(`ls: unknown target '${arg}'`, 'err');
 				break;
 			case 'cat':
-				if (arg.includes('achievement')) print('Harvard CS50X — Computer Science.');
-				else print(`cat: ${arg}: no such file`, 'err');
+				if (arg.includes('achievement')) {
+					print('• Led a team of 4 — shipped MVP 3 weeks early (Swallow AI)');
+					print('• Improved ML accuracy 72% → 87%, cut inference time 40%');
+					print('• Built a from-scratch RFC-compliant HTTP/1.1 server in Rust');
+				} else print(`cat: ${arg}: no such file`, 'err');
 				break;
 			case 'goto': {
 				const map: Record<string, string> = {
@@ -135,6 +153,14 @@
 		if (scrollEl) scrollEl.scrollTop = scrollEl.scrollHeight;
 	}
 
+	// Run a command from a clickable hint chip, then refocus the input.
+	async function runChip(cmd: string) {
+		run(cmd);
+		await tick();
+		if (scrollEl) scrollEl.scrollTop = scrollEl.scrollHeight;
+		inputEl?.focus();
+	}
+
 	// Global hotkeys: Ctrl/Cmd+K or backtick to toggle; Escape to close.
 	function onKeydown(e: KeyboardEvent) {
 		if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
@@ -189,6 +215,15 @@
 					<div class="line {line.kind}">{line.text}</div>
 				{/each}
 			</div>
+			<div class="hints">
+				<span class="hints-label">try</span>
+				{#each QUICK as q (q)}
+					<button class="hint-chip" type="button" onclick={() => runChip(q)} data-cursor="hover">
+						{q}
+					</button>
+				{/each}
+				<span class="esc-hint">esc to close</span>
+			</div>
 			<form class="prompt" onsubmit={submit}>
 				<span class="caret">❯</span>
 				<input
@@ -196,7 +231,7 @@
 					bind:value={input}
 					spellcheck="false"
 					autocomplete="off"
-					placeholder="type a command…"
+					placeholder="type a command, or click one above…"
 				/>
 			</form>
 		</div>
@@ -270,6 +305,48 @@
 	}
 	.line.err {
 		color: #ff6b6b;
+	}
+	.hints {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.55rem 1rem;
+		border-top: 1px solid var(--border-color);
+		background: rgba(0, 0, 0, 0.3);
+	}
+	.hints-label {
+		font-size: 0.65rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--text-muted);
+		margin-right: 0.15rem;
+	}
+	.hint-chip {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: var(--text-muted);
+		background: rgba(var(--accent-gold-rgb), 0.04);
+		border: 1px solid var(--border-color);
+		border-radius: 5px;
+		padding: 0.2rem 0.5rem;
+		transition:
+			color 0.2s ease,
+			border-color 0.2s ease,
+			background-color 0.2s ease;
+	}
+	.hint-chip:hover {
+		color: var(--accent-gold);
+		border-color: rgba(var(--accent-gold-rgb), 0.5);
+		background: rgba(var(--accent-gold-rgb), 0.1);
+	}
+	.esc-hint {
+		margin-left: auto;
+		font-size: 0.65rem;
+		color: var(--text-muted);
+		opacity: 0.7;
 	}
 	.prompt {
 		position: relative;
