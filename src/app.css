@@ -1,9 +1,33 @@
 @import 'tailwindcss';
 
+/* Self-hosted fonts */
+@import '@fontsource/space-grotesk/300.css';
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/600.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/fira-code/400.css';
+@import '@fontsource/fira-code/500.css';
+@import '@fontsource/fira-code/600.css';
+
+/* Aurum design system (gold-on-black) */
+@import './lib/styles/aurum.css';
+
+/* Tailwind 4 design tokens — exposes gold palette + fonts as utilities */
+@theme {
+	--font-sans: 'Space Grotesk', system-ui, sans-serif;
+	--font-mono: 'Fira Code', ui-monospace, monospace;
+	--color-gold: #d4af37;
+	--color-gold-dark: #c5a059;
+	--color-surface: #0a0a0a;
+	--color-card: #121212;
+}
+
 /* Global overflow prevention */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
+html,
+body {
+	overflow-x: hidden;
+	width: 100%;
 }
 
 /* Scroll Animation Classes */
