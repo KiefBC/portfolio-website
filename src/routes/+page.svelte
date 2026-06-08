@@ -18,7 +18,7 @@
 	import { inView } from '$lib/aurum/actions/inView';
 
 	// ---- Typing effect for the hero role line ----
-	const roles = ['Software Developer', 'Rust Developer', 'Go Developer', 'Systems Engineer'];
+	const roles = ['Software Developer', 'DevOps Engineer', 'Backend Developer', 'Rust Developer', 'Go Developer'];
 	let typed = $state('');
 	let roleIndex = 0;
 	let charIndex = 0;
@@ -50,9 +50,10 @@
 
 	// ---- Tech arsenal tabs (derived from existing skills) ----
 	const tabs = {
-		Languages: ['Rust', 'Go', 'TypeScript', 'Python', 'Swift'],
-		'Systems & Tooling': ['Linux', 'Docker', 'Git'],
-		Domains: ['Systems Programming', 'Machine Learning', 'Web Scraping', 'Cross-Platform']
+		Languages: ['Rust', 'Go', 'C++', 'TypeScript', 'Python', 'Swift'],
+		Frameworks: ['SvelteKit', 'Ruby on Rails', 'Tauri', 'Leptos'],
+		'Systems & DevOps': ['Linux', 'Docker', 'Dagger', 'PostgreSQL', 'CI/CD', 'Git'],
+		Domains: ['Backend Infrastructure', 'Systems Programming', 'Machine Learning', 'Cross-Platform']
 	};
 	const tabNames = Object.keys(tabs) as (keyof typeof tabs)[];
 	let activeTab = $state<keyof typeof tabs>('Languages');
@@ -98,7 +99,7 @@
 	<title>Kiefer — Software Developer</title>
 	<meta
 		name="description"
-		content="Portfolio of Kiefer — software developer specializing in Rust, Go, and systems programming."
+		content="Portfolio of Kiefer — backend & DevOps developer specializing in Go, Rust, CI/CD automation, and Linux/Docker systems."
 	/>
 </svelte:head>
 
@@ -117,9 +118,9 @@
 					<span class="gold-text">{typed}</span><span class="caret">▍</span>
 				</p>
 				<p class="bio">
-					I build robust, performance-minded software — from Rust desktop apps and game engines
-					to Go backend services and Python tooling. I care about systems that are correct,
-					fast, and a pleasure to maintain.
+					I build and automate backend infrastructure — Go and Rust services, CI/CD pipelines
+					with Dagger, and Linux/Docker systems. I run my own secure self-hosted stack and
+					care about software that's correct, fast, and a pleasure to maintain.
 				</p>
 				<div class="hero-actions">
 					<a class="btn primary" href="https://github.com/KiefBC" target="_blank" rel="noreferrer" data-cursor="hover">
@@ -134,7 +135,7 @@
 			<div class="hero-avatar">
 				<div class="orbit-ring"></div>
 				<div class="orbit-ring slow"></div>
-				<img src="https://github.com/KiefBC.png" alt="Kiefer" loading="lazy" />
+				<img src="/profile.jpg" alt="Kiefer" loading="lazy" />
 			</div>
 		</div>
 	</section>
@@ -148,16 +149,16 @@
 			<PremiumCard>
 				<h3 class="card-h">What I build</h3>
 				<p class="card-p">
-					Systems and tools that respect the machine and the user. Desktop apps with Tauri &
-					Leptos, ML-backed web apps, CLIs, and game engines — all with strong typing and a
-					systems-programming mindset.
+					Backend infrastructure and developer tooling: CI/CD pipelines with Dagger,
+					containerized builds, and Go &amp; Rust services, plus the occasional Tauri desktop app or
+					ML-backed web app. Strong typing and a systems-programming mindset throughout.
 				</p>
 			</PremiumCard>
 			<PremiumCard>
 				<h3 class="card-h">Education</h3>
-				{#each education as ed (ed.school)}
+				{#each education as ed (ed.degree)}
 					<p class="edu-degree">{ed.degree}</p>
-					<p class="edu-school mono">{ed.school} · {ed.period}</p>
+					<p class="edu-school mono">{ed.school}{#if ed.period} · {ed.period}{/if}</p>
 					<p class="card-p">{ed.details}</p>
 				{/each}
 			</PremiumCard>

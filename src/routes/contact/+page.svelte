@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import { Mail, Send, MapPin, Clock, Loader } from '@lucide/svelte';
 	import GithubIcon from '$lib/aurum/components/icons/GithubIcon.svelte';
+	import LinkedinIcon from '$lib/aurum/components/icons/LinkedinIcon.svelte';
 	import PremiumCard from '$lib/aurum/components/PremiumCard.svelte';
 	import SectionHeading from '$lib/aurum/components/SectionHeading.svelte';
 	import { systemLog } from '$lib/aurum/stores/systemLog';
@@ -109,6 +110,19 @@
 					<span class="channel-body">
 						<span class="channel-label mono">github</span>
 						<span class="channel-val">github.com/KiefBC</span>
+					</span>
+				</a>
+				<a
+					class="channel"
+					href="https://www.linkedin.com/in/kieferh/"
+					target="_blank"
+					rel="noreferrer"
+					data-cursor="hover"
+				>
+					<span class="channel-icon"><LinkedinIcon size={18} /></span>
+					<span class="channel-body">
+						<span class="channel-label mono">linkedin</span>
+						<span class="channel-val">linkedin.com/in/kieferh</span>
 					</span>
 				</a>
 			</div>

@@ -9,7 +9,7 @@ export interface Experience {
 export interface Education {
 	degree: string;
 	school: string;
-	period: string;
+	period?: string;
 	details: string;
 }
 

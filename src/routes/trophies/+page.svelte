@@ -61,7 +61,7 @@
 							</span>
 						</div>
 						<p class="seal-title">{edu.degree}</p>
-						<p class="seal-school gold-text mono">{edu.school} · {edu.period}</p>
+						<p class="seal-school gold-text mono">{edu.school}{#if edu.period} · {edu.period}{/if}</p>
 						<p class="seal-details">{edu.details}</p>
 						<span class="verified mono">
 							<CheckCircle size={13} strokeWidth={2} />
